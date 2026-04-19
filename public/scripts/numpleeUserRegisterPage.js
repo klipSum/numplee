@@ -1,0 +1,671 @@
+// DECLARE VARIABLES ============================================== //
+// ================================================================ //
+
+    // COMMON EXPRESSIONS ========================================= //
+    // ============================================================ //
+
+        var numberChecker = /\d/;
+        var letterCheck = /[a-zA-Z]/g;
+        var specialCharCheck = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/
+
+    // NUMBER MAPPERS ============================================= //
+    // ============================================================ //
+
+        var classNumbers = [
+
+                "One", "Two", "Three", "Four", "Five", 
+                "Six", "Seven", "Eight", "Nine", "Ten",
+
+                "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", 
+                "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty",
+
+                "TwentyOne", "TwentyTwo", "TwentyThree", "TwentyFour", "TwentyFive", 
+                "TwentySix", "TwentySeven", "TwentyEight", "TwentyNine", "Thirty",
+
+                "ThirtyOne", "ThirtyTwo", "ThirtyThree", "ThirtyFour", "ThirtyFive", 
+                "ThirtySix", "ThirtySeven", "ThirtyEight", "ThirtyNine", "Fourty",
+
+                "FourtyOne", "FourtyTwo", "FourtyThree", "FourtyFour", "FourtyFive", 
+                "FourtySix", "FourtySeven", "FourtyEight", "FourtyNine", "Fiftty"
+
+            ]
+
+    // LETTER MAPPERS ============================================= //
+    // ============================================================ //
+
+        var codeMaps = [
+
+            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+            "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+            "Y", "Z",
+
+            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
+            "y", "z",
+
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
+
+            "=", "-", "#", "@", "^", "&", "*", "<", ">", "|", "+", "~"
+
+        ]
+
+    // FOR NAV BAR CONTROLS ======================================= //
+    // ============================================================ //
+
+        // FOR FORMS AND GHOSTS STYLING =========================== //
+        // ======================================================== //
+
+            // GENERAL FORM STYLE CONTROL ========================= //
+            // ==================================================== //
+
+                var formGeneralStyling = `
+                
+                    width:100%;
+                    position:relative;
+                    transition:all 400ms ease;
+                    -o-transition:all 400ms ease;
+                    -ms-transition:all 400ms ease;
+                    -moz-transition:all 400ms ease;
+                    -webkit-transition:all 400ms ease;
+
+                `
+
+                    // FOR FIELDS ================================= //
+                    // ============================================ //
+
+                        // PRIMARY FIELD ========================== //
+                        // ======================================== //
+
+                            var formFieldStarterMainContainer = `
+                            
+                                width:100%;
+                                position:relative;
+                                transition:all 400ms ease;
+                                -o-transition:all 400ms ease;
+                                -ms-transition:all 400ms ease;
+                                -moz-transition:all 400ms ease;
+                                -webkit-transition:all 400ms ease;
+
+                            `
+
+                                var formFieldStarterContentResizer = `
+                                
+                                    width:100%;
+                                    z-index:2;
+                                    padding:10px 0px;
+                                    position:relative;
+                                    background:#FFFFFF;
+                                    box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                                    border-radius:8px;
+                                    transition:all 400ms ease;
+                                    -o-transition:all 400ms ease;
+                                    -ms-transition:all 400ms ease;
+                                    -moz-transition:all 400ms ease;
+                                    -webkit-transition:all 400ms ease;
+
+                                `
+
+                                    var formFieldStarterInputTextBlock = `
+                                    
+                                        width:90%;
+                                        color:#2c2c2c;
+                                        border:0px solid rgba(0,0,0,0);
+                                        outline:none;
+                                        padding:10px 0px;
+                                        position:relative;
+                                        font-size:15px;
+                                        text-align:center;
+                                        background:rgba(0,0,0,0);
+                                        letter-spacing:1px;
+                                        transition:all 400ms ease;
+                                        -o-transition:all 400ms ease;
+                                        -ms-transition:all 400ms ease;
+                                        -moz-transition:all 400ms ease;
+                                        -webkit-transition:all 400ms ease;
+
+                                    `
+
+                        // SECONDARY FIELDS ======================= //
+                        // ======================================== //
+
+                            var formFieldSecondariesMainContainer = `
+                            
+                                width:100%;
+                                opacity:1;
+                                margin:20px 0px 0px 0px;
+                                display:block;
+                                position:relative;
+                                transition:all 400ms ease;
+                                -o-transition:all 400ms ease;
+                                -ms-transition:all 400ms ease;
+                                -moz-transition:all 400ms ease;
+                                -webkit-transition:all 400ms ease;
+
+                            `
+
+                                var formFieldSecondariesContentResizer = `
+                                
+                                    width:100%;
+                                    z-index:1;
+                                    padding:10px 0px;
+                                    position:relative;
+                                    background:#FFFFFF;
+                                    box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                                    border-radius:8px;
+                                    transition:all 400ms ease;
+                                    -o-transition:all 400ms ease;
+                                    -ms-transition:all 400ms ease;
+                                    -moz-transition:all 400ms ease;
+                                    -webkit-transition:all 400ms ease;
+
+                                `
+
+                                    var formFieldSecondariesInputTextBlock = `
+                                    
+                                        width:90%;
+                                        color:#2c2c2c;
+                                        border:0px solid rgba(0,0,0,0);
+                                        outline:none;
+                                        padding:10px 0px;
+                                        position:relative;
+                                        font-size:15px;
+                                        text-align:center;
+                                        background:rgba(0,0,0,0);
+                                        letter-spacing:1px;
+                                        transition:all 400ms ease;
+                                        -o-transition:all 400ms ease;
+                                        -ms-transition:all 400ms ease;
+                                        -moz-transition:all 400ms ease;
+                                        -webkit-transition:all 400ms ease;
+
+                                    `
+
+                    // FOR BUTTONS ================================ //
+                    // ============================================ //
+
+                        var formSubmissionButtonMain = `
+                        
+                            width:100%;
+                            height:58px;
+                            margin:20px 0px 0px 0px;
+                            opacity:1;
+                            display:block;
+                            position:relative;
+                            transition:all 400ms ease;
+                            -o-transition:all 400ms ease;
+                            -ms-transition:all 400ms ease;
+                            -moz-transition:all 400ms ease;
+                            -webkit-transition:all 400ms ease;
+
+                        `
+
+                            var formSubmissionButtonActual = `
+                            
+                                width:100%;
+                                height:100%;
+                                left:0;
+                                right:0;
+                                color:#FFFFFF;
+                                cursor:pointer;
+                                margin:0px auto;
+                                border:0px solid rgba(0,0,0,0);
+                                z-index:0;
+                                outline:none;
+                                display:block;
+                                padding:20px 0px;
+                                position:absolute;
+                                font-size:15px;
+                                background:#34694F;
+                                box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                                border-radius:8px;
+                                transition:all 400ms ease;
+                                -o-transition:all 400ms ease;
+                                -ms-transition:all 400ms ease;
+                                -moz-transition:all 400ms ease;
+                                -webkit-transition:all 400ms ease;
+
+                            `
+
+
+
+
+    // FOR INPUTS ================================================= //
+    // ============================================================ //
+
+        // INPUT FIELDS MAIN CONTAINERS GATHER ==================== //
+        // ======================================================== //
+
+            var plateNumberMainContainer = document.querySelector(`.intakeScreenNumberPlateInputFieldContainer`)
+            var provinceCodeMainContainer = document.querySelector(`.intakeScreenNumberPlateProvinceCodeInputFieldContainer`)
+            var carDescriptionMainContainer = document.querySelector(`.intakeScreenCarTypeInputFieldContainer`)
+
+                // INPUT FIELDS ACTUAL GATHER ===================== //
+                // ================================================ //
+
+                    var plateNumberInputField = document.querySelector(`.inputScreenNumberPlateInputBoxActual`)
+                    var carDescriptionInputField = document.querySelector(`.inputScreenCarTypeInputBoxActual`)
+
+                        // INPUT BUTTONS GATHER ELEMENTS ========== //
+                        // ======================================== //
+
+                            var provinceCodeElementContainer = document.querySelector(`.intakeScreenNumberPlateProvinceCodeInputFieldElement`)
+
+                                var provinceCodeElementsCount = provinceCodeElementContainer.children.length
+
+        // SUBMISSION ELEMENTS GATHER ============================= //
+        // ======================================================== //
+
+            var submissionButtonMainContainer = document.querySelector(`.intakeScreenSubmissionButtonContainer`)
+
+                var submissionButtonActual = document.querySelector(`.intakeScreenSubmissionButtonActual`)
+
+
+
+
+
+
+    // FOR GHOSTS ================================================= //
+    // ============================================================ //
+
+        var getGhost = document.querySelector(`.subzeroControlContainer`)
+
+
+
+
+
+    // VALUE AND CAPTURE STRINGS ================================== //
+    // ============================================================ //
+
+        // FOR FORM INFORMATION CAPTURE STRINGS =================== //
+        // ======================================================== //
+
+            var numberPlateHold = "---"
+            var provinceCodeHold = "---"
+            var descriptionHold = "---"
+
+
+
+
+
+    // STYLING STRINGS ============================================ //
+    // ============================================================ //
+
+        // FOR NAV BAR STYLINGS =================================== //
+        // ======================================================== //
+
+        // FOR INPUT FIELDS STYLINGS ============================== //
+        // ======================================================== //
+
+            // FADE IN OUT MAKE LIVE AND KILL STYLES ============== //
+            // ==================================================== //
+
+                // FADE OUT FADE IN STYLES ======================== //
+                // ================================================ //
+
+                    var fadeOutInputElement = `
+                    
+                        width:100%;
+                        opacity:0;
+                        margin:0px 0px 0px 0px;
+                        display:block;
+                        position:relative;
+                        transition:all 600ms ease;
+                        -o-transition:all 600ms ease;
+                        -ms-transition:all 600ms ease;
+                        -moz-transition:all 600ms ease;
+                        -webkit-transition:all 600ms ease;
+
+                    `
+
+                    var fadeInInputElement = `
+                    
+                        width:100%;
+                        opacity:1;
+                        margin:20px 0px 0px 0px;
+                        display:block;
+                        position:relative;
+                        transition:all 600ms ease;
+                        -o-transition:all 600ms ease;
+                        -ms-transition:all 600ms ease;
+                        -moz-transition:all 600ms ease;
+                        -webkit-transition:all 600ms ease;
+
+                    `
+
+                // MAKE LIVE KILL ELEMENT STYLES ================== //
+                // ================================================ //
+
+                    var killInputElement = `
+                    
+                        width:100%;
+                        opacity:0;
+                        margin:0px 0px 0px 0px;
+                        display:none;
+                        position:relative;
+                        transition:all 600ms ease;
+                        -o-transition:all 600ms ease;
+                        -ms-transition:all 600ms ease;
+                        -moz-transition:all 600ms ease;
+                        -webkit-transition:all 600ms ease;
+
+                    `
+
+                    var makeLiveInputElement = `
+                    
+                        width:100%;
+                        opacity:0;
+                        margin:0px 0px 0px 0px;
+                        display:block;
+                        position:relative;
+                        transition:all 600ms ease;
+                        -o-transition:all 600ms ease;
+                        -ms-transition:all 600ms ease;
+                        -moz-transition:all 600ms ease;
+                        -webkit-transition:all 600ms ease;
+
+                    `
+
+
+
+        // FOR SUBMISSION BUTTONS STYLINGS ======================== //
+        // ======================================================== //
+
+            // FADE IN OUT MAKE LIVE AND KILL STYLES ============== //
+            // ==================================================== //
+
+                // FADE OUT FADE IN STYLES ======================== //
+                // ================================================ //
+
+                    var fadeOutButtonElement = `
+                    
+                        width:100%;
+                        height:58px;
+                        margin:0px 0px 0px 0px;
+                        opacity:0;
+                        display:block;
+                        position:relative;
+                        transition:all 600ms ease;
+                        -o-transition:all 600ms ease;
+                        -ms-transition:all 600ms ease;
+                        -moz-transition:all 600ms ease;
+                        -webkit-transition:all 600ms ease;
+
+                    `
+
+                    var fadeInButtonElement = `
+                    
+                        width:100%;
+                        height:58px;
+                        margin:20px 0px 0px 0px;
+                        opacity:1;
+                        display:block;
+                        position:relative;
+                        transition:all 600ms ease;
+                        -o-transition:all 600ms ease;
+                        -ms-transition:all 600ms ease;
+                        -moz-transition:all 600ms ease;
+                        -webkit-transition:all 600ms ease;
+
+                    `
+
+                // MAKE LIVE KILL ELEMENT STYLES ================== //
+                // ================================================ //
+
+                    var killButtonElement = `
+                    
+                        width:100%;
+                        height:58px;
+                        margin:0px 0px 0px 0px;
+                        opacity:0;
+                        display:none;
+                        position:relative;
+                        transition:all 600ms ease;
+                        -o-transition:all 600ms ease;
+                        -ms-transition:all 600ms ease;
+                        -moz-transition:all 600ms ease;
+                        -webkit-transition:all 600ms ease;
+
+                    `
+
+                    var makeLiveButtonElement = `
+                    
+                        width:100%;
+                        height:58px;
+                        margin:0px 0px 0px 0px;
+                        opacity:0;
+                        display:block;
+                        position:relative;
+                        transition:all 600ms ease;
+                        -o-transition:all 600ms ease;
+                        -ms-transition:all 600ms ease;
+                        -moz-transition:all 600ms ease;
+                        -webkit-transition:all 600ms ease;
+
+                    `
+
+        // FOR GENERAL STYLINGS =================================== //
+        // ======================================================== //
+
+            // GENERAL ON AND OFF DISPLAY MODES =================== //
+            // ==================================================== //
+
+                var generalOnDisplayMode = `block`
+                var generalOffDisplayMode = `none`
+
+            // GENERAL ON AND OFF DISPLAY MODES FOR INLINE BUTTONS  //
+            // ==================================================== //
+
+                var generalOnInlineDisplayMode = `inline-table`
+                var generalOffInlineDisplayMode = `none`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FUNCTIONS ====================================================== //
+// ================================================================ //
+
+
+
+
+
+
+    // FUNCTIONS FOR INPUT FIELDS CONTROL ========================= //
+    // ============================================================ //
+
+        // GENERAL FADE IN FADE OUT KILL LIVE FUNCTIONS =========== //
+        // ======================================================== //
+
+            // FOR MAKE LIVE AND FADE IN STYLING FUNCTIONS ======== //
+            // ==================================================== //
+
+
+            // FOR FADE OUT AND KILL STYLING FUNCTIONS ============ //
+            // ==================================================== //
+
+                // FOR INPUT FIELDS =============================== //
+                // ================================================ //
+
+
+
+
+                    
+
+
+
+        // FOR PLATE NUMBER FUNCTIONS ============================= //
+        // ======================================================== //
+
+            function plateNumberFieldIntakeParamsFunction (conditionCheckerField, effectTertiaryField, closeInputElementFunction, closeInputElementFunctionSpecial ,closeButtonElementFunction, checkerNumber, openNextItemFunction, trueCheck, falseCheck) {
+
+                // IN FUNCTION SUB FUNCTIONS ====================== //
+                // ================================================ //
+
+                    // RESET FOR INVALID SELECTION FUNCTION ======= //
+                    // ============================================ //
+
+                        function invalidInput () {
+
+                            // UPADTE FORM UPDATE HOLD TEXTS  //
+                            // ============================== //
+
+                                numberPlateHold = ``
+                                provinceCodeHold = ``
+                                descriptionHold = ``
+
+                            // LOWERCASE FIELD ==================== //
+                            // ==================================== //
+
+                                conditionCheckerField.style.textTransform = "lowercase"
+                                effectTertiaryField.style.textTransform = "lowercase"
+
+                            // REMOVE ALL INPUT FIELDS BELOW ====== //
+                            // ==================================== //
+
+                                closeInputElementFunctionSpecial(provinceCodeMainContainer, provinceCodeHold)
+                                closeInputElementFunction(carDescriptionMainContainer, carDescriptionInputField)
+                                closeButtonElementFunction(submissionButtonMainContainer)
+
+                        }
+
+                // CHECK FIELD VALIDITY =========================== //
+                // ================================================ //
+
+                    // IF FIELD IS EMPTY ========================== //
+                    // ============================================ //
+
+                        if ( conditionCheckerField.value == "" || conditionCheckerField.value.length == 0 ) {
+                                        
+                            invalidInput()
+
+                        }
+
+                    // IF FIELD IS NOT EMPTY AND BELOW 6 CHARS ==== //
+                    // ============================================ //
+
+                        else if ( conditionCheckerField.value.length < checkerNumber ) {
+                                        
+                            invalidInput()
+
+                        }
+
+                    // ElSE IF FIELD IS 6 CHARS =================== //
+                    // ============================================ //
+
+                        else if ( conditionCheckerField.value.length >= checkerNumber ) {
+
+                            // CHECK IF INCLUDES NUMBERS ========= //
+                            // =================================== //
+
+                                // IF ONLY INCLUDES NUMBERS ====== //
+                                // =============================== //
+
+                                    if ( 
+                                        
+                                            numberChecker.test(`${conditionCheckerField.value}`) == trueCheck && 
+                                            letterCheck.test(`${conditionCheckerField.value}`) == falseCheck &&
+                                            specialCharCheck.test(`${conditionCheckerField.value}`) == falseCheck
+                                        
+                                        ) 
+                                        
+                                    {
+                                        
+                                        validCapeCodesInput()
+
+                                    }
+
+                                // IF DOES NOT INCLUDE NUMBERS === //
+                                // =============================== //
+
+                                    else {
+
+                                        invalidInput()
+
+                                    }
+
+                        }
+
+            }
+
+
+            
+
+        // GHOST CREATION FUNCTION ================================ //
+        // ======================================================== //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// EVENTS AND ACTIONS ============================================= //
+// ================================================================ //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// AUTORUN EVENTS ================================================= //
+// ================================================================ //
+
+    // CHECK PAGE LANGUAGE ======================================== //
+    // ============================================================ //
+
+    // FOCUS ON FIRST FIELD ======================================= //
+    // ============================================================ //
+
+        
+
+    // CHECK CLICKED ON ELEMENT =================================== //
+    // ============================================================ //
+
+        document.addEventListener("click", function (element) {
+
+            // CLASSNAME CAPTURED ================================= //
+            // ==================================================== //
+
+                var getSelectedClassName = `${element.srcElement.className}`
+            
+        })

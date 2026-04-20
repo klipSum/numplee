@@ -671,7 +671,7 @@
         // FOR GHOST BODIES ======================================= //
         // ======================================================== //
 
-            // SPWANED GHOSTS ===================================== //
+            // SPAWNED GHOSTS ===================================== //
             // ==================================================== //
 
                 // CLICKERS ======================================= //
@@ -690,6 +690,52 @@
                 // ================================================ //
 
                     var getSpawnedGhostBodyContainer = document.querySelector(`.spawnedGhostContentCardsContainer`)
+
+
+
+
+            // ACTIVE GHOSTS ====================================== //
+            // ==================================================== //
+
+                // CLICKERS ======================================= //
+                // ================================================ //
+
+                    var getActiveGhostOpenClicker = document.querySelector(`.activeGhostsDropDownButtonClickerOn`)
+                    var getActiveGhostCloseClicker = document.querySelector(`.activeGhostsDropDownButtonClickerOff`)
+
+                    var getActiveGhostIconLineOne = document.querySelector(`.activeGhostsDropDownButtonIconLineOne`)
+                    var getActiveGhostIconLineTwo = document.querySelector(`.activeGhostsDropDownButtonIconLineTwo`)
+
+                // ICON LINES ===================================== //
+                // ================================================ //
+
+                // BODY CONTAINER ================================= //
+                // ================================================ //
+
+                    var getActiveGhostBodyContainer = document.querySelector(`.activeGhostContentCardsContainer`)
+
+
+                    
+
+            // RELEASED GHOSTS ==================================== //
+            // ==================================================== //
+
+                // CLICKERS ======================================= //
+                // ================================================ //
+
+                    var getReleasedGhostOpenClicker = document.querySelector(`.releasedGhostsDropDownButtonClickerOn`)
+                    var getReleasedGhostCloseClicker = document.querySelector(`.releasedGhostsDropDownButtonClickerOff`)
+
+                    var getReleasedGhostIconLineOne = document.querySelector(`.releasedGhostsDropDownButtonIconLineOne`)
+                    var getReleasedGhostIconLineTwo = document.querySelector(`.releasedGhostsDropDownButtonIconLineTwo`)
+
+                // ICON LINES ===================================== //
+                // ================================================ //
+
+                // BODY CONTAINER ================================= //
+                // ================================================ //
+
+                    var getReleasedGhostBodyContainer = document.querySelector(`.releasedGhostContentCardsContainer`)
 
 
         // FOR GHOST SHELLS ======================================= //
@@ -844,7 +890,27 @@
                         // ON MODE ================================ //
                         // ======================================== //
 
-                            function spawnedGhostClickerOnFunction (ghostCurrentClicker, ghostNextClicker, ghostIconLineOne, ghostIconLineTwo, ghostBody) {
+                            function ghostClickerOnFunction (
+                                
+                                ghostCurrentClicker, 
+                                ghostNextClicker, 
+                                ghostIconLineOne, 
+                                ghostIconLineTwo, 
+                                ghostBody, 
+                                otherGhostCurrentClickerOne, 
+                                otherGhostNextClickerOne, 
+                                otherGhostCurrentClickerTwo, 
+                                otherGhostNextClickerTwo, 
+                                otherGhostIconLineOneOne, 
+                                otherGhostIconLineOneTwo, 
+                                otherGhostIconLineTwoOne, 
+                                otherGhostIconLineTwoTwo, 
+                                otherGhostBodyOne, 
+                                otherGhostBodyTwo
+                            
+                            ) 
+                            
+                            {
 
                                 // SWITCH OFF CURRENT CLICKER ===== //
                                 // ================================ //
@@ -904,12 +970,147 @@
 
                                         }, 50)
 
+
+
+
+                                // CLOSE AND RESER OTHER OPEN TABS  //
+                                // ================================ //
+
+                                    // CLOSE AND RESET CLICKERS === //
+                                    // ============================ //
+
+                                        // SWITCH ON DEFAULT CLICKERS //
+                                        // ========================== //
+
+                                            otherGhostCurrentClickerOne.style = `
+                                        
+                                                ${ghostClickerOnMode}
+
+                                            `
+
+                                            otherGhostCurrentClickerTwo.style = `
+                                        
+                                                ${ghostClickerOnMode}
+
+                                            `
+
+                                        // SWITCH OFF CLOSE CLICKERS  //
+                                        // ========================== //
+
+                                            otherGhostNextClickerOne.style = `
+                                        
+                                                ${ghostClickerOffMode}
+
+                                            `
+
+                                            otherGhostNextClickerTwo.style = `
+                                        
+                                                ${ghostClickerOffMode}
+
+                                            `
+
+
+
+
+                                    // RESET LINE ICONS =========== //
+                                    // ============================ //
+
+                                        // FOR OTHER GHOST ONE ==== //
+                                        // ======================== //
+
+                                            otherGhostIconLineOneOne.style = `
+                                            
+                                                ${ghostClickerLineOneClosedMode}
+
+                                            `
+
+                                            otherGhostIconLineOneTwo.style = `
+                                            
+                                                ${ghostClickerLineTwoClosedMode}
+
+                                            `
+
+                                        // FOR OTHER GHOST TWO ==== //
+                                        // ======================== //
+
+                                            otherGhostIconLineTwoOne.style = `
+                                            
+                                                ${ghostClickerLineOneClosedMode}
+
+                                            `
+
+                                            otherGhostIconLineTwoTwo.style = `
+                                            
+                                                ${ghostClickerLineTwoClosedMode}
+
+                                            `
+
+
+
+
+                                    // CLOSE AND RESET GHOST BODY = //
+                                    // ============================ //
+
+                                        // FOR OTHER GHOST ONE ==== //
+                                        // ======================== //
+
+                                            otherGhostBodyOne.style = `
+                                            
+                                                ${ghostBodyOffModeFadeOut}
+
+                                            `
+
+                                                // KILL BODY ====== //
+                                                // ================ //
+
+                                                    setTimeout(() => {
+
+                                                        otherGhostBodyOne.style = `
+                                                        
+                                                            ${ghostBodyOffMode}
+
+                                                        `
+
+                                                    }, 200)
+
+                                        // FOR OTHER GHOST ONE ==== //
+                                        // ======================== //
+
+                                            otherGhostBodyTwo.style = `
+                                            
+                                                ${ghostBodyOffModeFadeOut}
+
+                                            `
+
+                                                // KILL BODY ====== //
+                                                // ================ //
+
+                                                    setTimeout(() => {
+
+                                                        otherGhostBodyTwo.style = `
+                                                        
+                                                            ${ghostBodyOffMode}
+
+                                                        `
+
+                                                    }, 200)
+
                             }
 
                         // OFF MODE =============================== //
                         // ======================================== //
 
-                            function spawnedGhostClickerOffFunction (ghostCurrentClicker, ghostNextClicker, ghostIconLineOne, ghostIconLineTwo, ghostBody) {
+                            function ghostClickerOffFunction (
+                                
+                                ghostCurrentClicker, 
+                                ghostNextClicker, 
+                                ghostIconLineOne, 
+                                ghostIconLineTwo, 
+                                ghostBody
+                            
+                            ) 
+                            
+                            {
 
                                 // SWITCH OFF CURRENT CLICKER ===== //
                                 // ================================ //
@@ -947,7 +1148,7 @@
                                 // FADE OUT BODY AND KILL ========= //
                                 // ================================ //
 
-                                    // FADE OUT CONTAINER ========= //
+                                    // FADE OUT BODY ============== //
                                     // ============================ //
 
                                         ghostBody.style = `
@@ -956,7 +1157,7 @@
                                         
                                         `
 
-                                    // KILL CONTAINER ============= //
+                                    // KILL BODY ================== //
                                     // ============================ //
 
                                         setTimeout(() => {
@@ -995,49 +1196,156 @@
 
     // EVENTS FOR GHOST BODIES CONTROL ============================ //
     // ============================================================ //
-    
-        // EVENTS FOR SPWANED GHOST BODIES ======================== //
+
+        // EVENTS FOR SPWANED GHOSTS ============================== //
         // ======================================================== //
 
-            // EVENTS FOR SPWANED GHOSTS ========================== //
+            // OPEN CLICKER ======================================= //
             // ==================================================== //
 
-                // FOR CLICKERS =================================== //
-                // ================================================ //
+                getSpawnedGhostOpenClicker.addEventListener("click", function () {
 
-                    // OPEN CLICKER =============================== //
-                    // ============================================ //
+                    ghostClickerOnFunction(
+                        
+                        getSpawnedGhostOpenClicker, 
+                        getSpawnedGhostCloseClicker, 
+                        getSpawnedGhostIconLineOne, 
+                        getSpawnedGhostIconLineTwo, 
+                        getSpawnedGhostBodyContainer,
 
-                        getSpawnedGhostOpenClicker.addEventListener("click", function () {
+                        getActiveGhostOpenClicker,
+                        getActiveGhostCloseClicker,
+                        getReleasedGhostOpenClicker,
+                        getReleasedGhostCloseClicker,
+                        getActiveGhostIconLineOne,
+                        getActiveGhostIconLineTwo,
+                        getReleasedGhostIconLineOne,
+                        getReleasedGhostIconLineTwo,
+                        getActiveGhostBodyContainer,
+                        getReleasedGhostBodyContainer
+                    
+                    )
 
-                            spawnedGhostClickerOnFunction(
-                                
-                                getSpawnedGhostOpenClicker, 
-                                getSpawnedGhostCloseClicker, 
-                                getSpawnedGhostIconLineOne, 
-                                getSpawnedGhostIconLineTwo, 
-                                getSpawnedGhostBodyContainer
-                            
-                            )
+                })
 
-                        })
+            // CLOSE CLICKER ====================================== //
+            // ==================================================== //
 
-                    // CLOSE CLICKER ============================== //
-                    // ============================================ //
+                getSpawnedGhostCloseClicker.addEventListener("click", function () {
 
-                        getSpawnedGhostCloseClicker.addEventListener("click", function () {
+                    ghostClickerOffFunction(
+                        
+                        getSpawnedGhostCloseClicker, 
+                        getSpawnedGhostOpenClicker, 
+                        getSpawnedGhostIconLineOne, 
+                        getSpawnedGhostIconLineTwo, 
+                        getSpawnedGhostBodyContainer
+                    
+                    )
 
-                            spawnedGhostClickerOffFunction(
-                                
-                                getSpawnedGhostCloseClicker, 
-                                getSpawnedGhostOpenClicker, 
-                                getSpawnedGhostIconLineOne, 
-                                getSpawnedGhostIconLineTwo, 
-                                getSpawnedGhostBodyContainer
-                            
-                            )
+                })
 
-                        })
+
+
+
+        // EVENTS FOR ACTIVE GHOSTS =============================== //
+        // ======================================================== //
+
+            // OPEN CLICKER ======================================= //
+            // ==================================================== //
+
+                getActiveGhostOpenClicker.addEventListener("click", function () {
+
+                    ghostClickerOnFunction(
+                        
+                        getActiveGhostOpenClicker, 
+                        getActiveGhostCloseClicker, 
+                        getActiveGhostIconLineOne, 
+                        getActiveGhostIconLineTwo, 
+                        getActiveGhostBodyContainer,
+
+                        getSpawnedGhostOpenClicker,
+                        getSpawnedGhostCloseClicker,
+                        getReleasedGhostOpenClicker,
+                        getReleasedGhostCloseClicker,
+                        getSpawnedGhostIconLineOne,
+                        getSpawnedGhostIconLineTwo,
+                        getReleasedGhostIconLineOne,
+                        getReleasedGhostIconLineTwo,
+                        getSpawnedGhostBodyContainer,
+                        getReleasedGhostBodyContainer
+                    
+                    )
+
+                })
+
+            // CLOSE CLICKER ====================================== //
+            // ==================================================== //
+
+                getActiveGhostCloseClicker.addEventListener("click", function () {
+
+                    ghostClickerOffFunction(
+                        
+                        getActiveGhostCloseClicker, 
+                        getActiveGhostOpenClicker, 
+                        getActiveGhostIconLineOne, 
+                        getActiveGhostIconLineTwo, 
+                        getActiveGhostBodyContainer
+                    
+                    )
+
+                })
+
+
+
+
+        // EVENTS FOR RELEASED GHOSTS ============================= //
+        // ======================================================== //
+
+            // OPEN CLICKER ======================================= //
+            // ==================================================== //
+
+                getReleasedGhostOpenClicker.addEventListener("click", function () {
+
+                    ghostClickerOnFunction(
+                        
+                        getReleasedGhostOpenClicker, 
+                        getReleasedGhostCloseClicker, 
+                        getReleasedGhostIconLineOne, 
+                        getReleasedGhostIconLineTwo, 
+                        getReleasedGhostBodyContainer,
+
+                        getSpawnedGhostOpenClicker,
+                        getSpawnedGhostCloseClicker,
+                        getActiveGhostOpenClicker,
+                        getActiveGhostCloseClicker,
+                        getSpawnedGhostIconLineOne,
+                        getSpawnedGhostIconLineTwo,
+                        getActiveGhostIconLineOne,
+                        getActiveGhostIconLineTwo,
+                        getSpawnedGhostBodyContainer,
+                        getActiveGhostBodyContainer
+                    
+                    )
+
+                })
+
+            // CLOSE CLICKER ====================================== //
+            // ==================================================== //
+
+                getReleasedGhostCloseClicker.addEventListener("click", function () {
+
+                    ghostClickerOffFunction(
+                        
+                        getReleasedGhostCloseClicker, 
+                        getReleasedGhostOpenClicker, 
+                        getReleasedGhostIconLineOne, 
+                        getReleasedGhostIconLineTwo, 
+                        getReleasedGhostBodyContainer
+                    
+                    )
+
+                })
 
 
 

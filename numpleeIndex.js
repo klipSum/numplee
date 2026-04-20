@@ -76,44 +76,76 @@ const open = process.env.takeOpenly
     // CREATE MONGOOSE SCHEMA FOR UPLOAD ----------------------------------------
     // //////////////////////////////////////////////////////////////////////////
 
-        // FOR REGISTER USERS ---------------------------------------------------
+        // FOR USER CONTROL -----------------------------------------------------
         // ----------------------------------------------------------------------
 
-            const registerNeUserEntry = {
+            // SPAWNED USERS ----------------------------------------------------
+            // ------------------------------------------------------------------
 
-                username:String,                                            // 1
-                userEmail:String,                                           // 2
-                userCode:String,                                            // 3
-                userinceptionDate:String,                                   // 4
-                userinceptionTime:String                                    // 5
+                const newlySpawnedUserProfile = {
 
-            }
+                    spawnedUserStatusIndicator:String,                       // 1
+                    spawnedUsername:String,                                  // 2
+                    spawnedUserEmail:String,                                 // 3
+                    spawnedUserCode:String,                                  // 4
+                    spawnedUserinceptionDate:String,                         // 5
+                    spawnedUserinceptionTime:String                          // 6
+
+                }
+
+            // ACTVATED USERS ---------------------------------------------------
+            // ------------------------------------------------------------------
+
+                const newlyActivatedUserProfile = {
+
+                    activatedUserStatusIndicator:String,                     // 1
+                    activatedUsername:String,                                // 2
+                    activatedUserEmail:String,                               // 3
+                    activatedUserCode:String,                                // 4
+                    activatedUserinceptionDate:String,                       // 5
+                    activatedUserinceptionTime:String                        // 6
+
+                }
+
+            // RELEASED USERS ---------------------------------------------------
+            // ------------------------------------------------------------------
+
+                const newlyReleasedUserProfile = {
+
+                    releasedUserStatusIndicator:String,                      // 1
+                    releasedUsername:String,                                 // 2
+                    releasedUserEmail:String,                                // 3
+                    releasedUserCode:String,                                 // 4
+                    releasedUserinceptionDate:String,                        // 5
+                    releasedUserinceptionTime:String                         // 6
+
+                }
 
         // FOR NUMBER PLATE INPUTS BY ADMIN -------------------------------------
         // ----------------------------------------------------------------------
 
-            const plateEntrySchema = {
+            const adminPlateEntrySchema = {
 
-                plateNumber:String,                                         // 1
-                provinceCode:String,                                        // 2
-                carDescription:String,                                      // 3
-                subDate:String,                                             // 4
-                subTime:String,                                             // 5
+                plateNumber:String,                                          // 1
+                provinceCode:String,                                         // 2
+                carDescription:String,                                       // 3
+                subDate:String,                                              // 4
+                subTime:String,                                              // 5
 
             }
 
         // FOR NUMBE PLATE INPUTS BY USERS --------------------------------------
         // ----------------------------------------------------------------------
 
-            const plateEntryByRegisteredUser = {
+            const userPlateEntryByRegisteredUser = {
 
                 
-                userCode:String,                                            // 1
-                plateNumber:String,                                         // 2
-                provinceCode:String,                                        // 3
-                carDescription:String,                                      // 4
-                subDate:String,                                             // 5
-                subTime:String,                                             // 6
+                userCode:String,                                             // 1
+                plateNumber:String,                                          // 2
+                provinceCode:String,                                         // 3
+                carDescription:String,                                       // 4
+                subDate:String,                                              // 5
+                subTime:String,                                              // 6
 
             }
 
@@ -141,23 +173,44 @@ const open = process.env.takeOpenly
 
                     var currentDateMarker = `${monthMapper[month]} ${year}`
 
-        // CREATE ENTRY SUBMISSION MODELS ---------------------------------------
+
+
+
+        // CREATE USERS AND ENTRY SUBMISSION MODELS -----------------------------
         // //////////////////////////////////////////////////////////////////////
 
-            // FOR REGISTER NEW USER SUBMISSION ---------------------------------
+            // USER CONTROL -----------------------------------------------------
             // //////////////////////////////////////////////////////////////////
 
-                const newRegUserEntry = mongoose.model(`allRegisteredUsers`, registerNeUserEntry)
+                // FOR NEWLY SPAWNED USER PROFILE -------------------------------
+                // //////////////////////////////////////////////////////////////
 
-            // FOR SUBMISSIONS BY ADMIN -----------------------------------------
+                    const spawnedUserProfile = mongoose.model(`allSpawnedUsers`, newlySpawnedUserProfile)
+
+                // FOR ACTIVE USER PROFILE --------------------------------------
+                // //////////////////////////////////////////////////////////////
+
+                    const activatedUserProfile = mongoose.model(`allActiveUsers`, newlyActivatedUserProfile)
+
+                // FOR RELEASED USER PROFILE ------------------------------------
+                // //////////////////////////////////////////////////////////////
+
+                    const releasedUserProfile = mongoose.model(`allReleasedUsers`, newlyReleasedUserProfile)
+
+
+
+            // PLATE ENTRY SUBMISSIONS CONTROL ----------------------------------
             // //////////////////////////////////////////////////////////////////
 
-                const plateEntry = mongoose.model(`allplates`, plateEntrySchema)
+                // FOR PLATE ENTRY SUBMISSIONS BY ADMIN -------------------------
+                // //////////////////////////////////////////////////////////////
 
-            // FOR SUBMISSIONS BY REGISTERED USERS ------------------------------
-            // //////////////////////////////////////////////////////////////////
+                    const adminPlateEntry = mongoose.model(`allplates`, adminPlateEntrySchema)
 
-                const regUserPlateEntry = mongoose.model(`allRegUserPlates`, plateEntryByRegisteredUser)
+                // FOR PLATE ENTRY SUBMISSIONS BY REGISTERED USERS -------------
+                // /////////////////////////////////////////////////////////////
+
+                    const activeUserPlateEntry = mongoose.model(`allRegUserPlates`, userPlateEntryByRegisteredUser)
 
 
 
@@ -237,7 +290,7 @@ const open = process.env.takeOpenly
                             // CREATE NEW PLATE ENTRY -----------------------------------
                             // ----------------------------------------------------------
 
-                                let newEntry = new plateEntry ({
+                                let newEntry = new adminPlateEntry ({
 
                                     // ENTRY SUBMISSION ---------------------------------
                                     // --------------------------------------------------
@@ -262,7 +315,7 @@ const open = process.env.takeOpenly
 
                         try {
 
-                            var plates = await plateEntry.findOne({plateNumber: req.body.plateIntake})
+                            var plates = await adminPlateEntry.findOne({plateNumber: req.body.plateIntake})
 
                             var arraysForUse = plates.plateNumber
                             var carType = plates.carDescription

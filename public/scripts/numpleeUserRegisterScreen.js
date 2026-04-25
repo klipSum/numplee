@@ -48,6 +48,18 @@
             "=", "-", "#", "@", "^", "&", "*", "<", ">", "|", "+", "~"
 
         ]
+        
+        var plasmaMaps = [
+
+            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+            "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+            "Y", "Z",
+
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
+
+            "=", "-", "#", "^", "&", "*", "<", ">", "+", "~"
+
+        ]
 
     // FOR NAV BAR CONTROLS ======================================= //
     // ============================================================ //
@@ -304,6 +316,43 @@
 
                     `
 
+                        // FADE OUT FADE IN NOTICE BOARDS ========= //
+                        // ======================================== //
+
+                            var fadeOutNoticeBoardElement = `
+                            
+                                width:100%;
+                                margin:0px 0px 0px 0px;
+                                opacity:0;
+                                display:${generalOnDisplayMode};
+                                position:relative;
+                                background:#FFF6CB;
+                                border-radius:8px;
+                                transition:all 400ms ease;
+                                -o-transition:all 400ms ease;
+                                -ms-transition:all 400ms ease;
+                                -moz-transition:all 400ms ease;
+                                -webkit-transition:all 400ms ease;
+
+                            `
+
+                            var fadeInNoticeBoardElement = `
+                            
+                                width:100%;
+                                margin:20px 0px 0px 0px;
+                                opacity:1;
+                                display:${generalOnDisplayMode};
+                                position:relative;
+                                background:#FFF6CB;
+                                border-radius:8px;
+                                transition:all 400ms ease;
+                                -o-transition:all 400ms ease;
+                                -ms-transition:all 400ms ease;
+                                -moz-transition:all 400ms ease;
+                                -webkit-transition:all 400ms ease;
+
+                            `
+
                 // MAKE LIVE KILL ELEMENT STYLES ================== //
                 // ================================================ //
 
@@ -336,6 +385,43 @@
                         -webkit-transition:all 600ms ease;
 
                     `
+
+                        // MAKE LIVE KILL NOTICE BOARDS =========== //
+                        // ======================================== //
+
+                            var killNoticeBoardElement = `
+                            
+                                width:100%;
+                                margin:0px 0px 0px 0px;
+                                opacity:0;
+                                display:${generalOffDisplayMode};
+                                position:relative;
+                                background:#FFF6CB;
+                                border-radius:8px;
+                                transition:all 400ms ease;
+                                -o-transition:all 400ms ease;
+                                -ms-transition:all 400ms ease;
+                                -moz-transition:all 400ms ease;
+                                -webkit-transition:all 400ms ease;
+
+                            `
+
+                            var makeLiveNoticeBoardElement = `
+                            
+                                width:100%;
+                                margin:0px 0px 0px 0px;
+                                opacity:0;
+                                display:${generalOnDisplayMode};
+                                position:relative;
+                                background:#FFF6CB;
+                                border-radius:8px;
+                                transition:all 400ms ease;
+                                -o-transition:all 400ms ease;
+                                -ms-transition:all 400ms ease;
+                                -moz-transition:all 400ms ease;
+                                -webkit-transition:all 400ms ease;
+
+                            `
 
 
 
@@ -633,9 +719,9 @@
         // FOR FORM INFORMATION CAPTURE STRINGS =================== //
         // ======================================================== //
 
-            var numberPlateHold = "---"
-            var provinceCodeHold = "---"
-            var descriptionHold = "---"
+            var userNameHold = "---"
+            var emailHold = "---"
+            var specCodeHold = "---"
 
 
 
@@ -646,19 +732,30 @@
         // INPUT FIELDS MAIN CONTAINERS GATHER ==================== //
         // ======================================================== //
 
-            var plateNumberMainContainer = document.querySelector(`.intakeScreenNumberPlateInputFieldContainer`)
+            var userNameMainContainer = document.querySelector(`.userRegisterUsernameInputFieldContainer`)
+
+            var userEmailMainContainer = document.querySelector(`.userRegisterEmailInputFieldContainer`)
+
+            var userCodeMainContainer = document.querySelector(`.userRegisterSpecCodeInputFieldContainer`)
+
+            var noticeBoardMainContainer = document.querySelector(`.userRegisterSpecCodeCopyTextInstructionsContainer`)
 
                 // INPUT FIELDS ACTUAL GATHER ===================== //
                 // ================================================ //
 
-                    var plateNumberInputField = document.querySelector(`.inputScreenNumberPlateInputBoxActual`)
+                    var userNameInputField = document.querySelector(`.inputScreenUsernameInputBoxActual`)
+
+                    var userEmailInputField = document.querySelector(`.inputScreenEmailInputBoxActual`)
+
+                    var userCodeInputField = document.querySelector(`.inputScreenSpecCodeInputBoxActual`)
+
 
         // SUBMISSION ELEMENTS GATHER ============================= //
         // ======================================================== //
 
-            var submissionButtonMainContainer = document.querySelector(`.intakeScreenSubmissionButtonContainer`)
+            var submissionButtonMainContainer = document.querySelector(`.userRegisterSubmissionButtonContainer`)
 
-                var submissionButtonActual = document.querySelector(`.intakeScreenSubmissionButtonActual`)
+                var submissionButtonActual = document.querySelector(`.userRegisterSubmissionButtonActual`)
 
 
 
@@ -767,40 +864,305 @@
     // FUNCTIONS FOR INPUT FIELDS CONTROL ========================= //
     // ============================================================ //
 
-        // FOR PLATE NUMBER FUNCTIONS ============================= //
+        // FOR USER NAME FUNCTIONS ================================ //
         // ======================================================== //
 
-            function plateNumberFieldIntakeParamsFunction (conditionCheckerField, effectTertiaryField, closeInputElementFunction, closeInputElementFunctionSpecial ,closeButtonElementFunction, checkerNumber, openNextItemFunction, trueCheck, falseCheck) {
+            function userNameFieldIntakeParamsFunction (
+                
+                currentField, 
+                otherFieldOne, 
+                otherFieldTwo, 
+                fieldIntakChareNumber, 
+                trueCheck, 
+                falseCheck
+            
+            ) 
+            
+            {
 
                 // IN FUNCTION SUB FUNCTIONS ====================== //
                 // ================================================ //
 
-                    // RESET FOR INVALID SELECTION FUNCTION ======= //
+                    // RESET FOR INVALID INPUTS FUNCTION ========== //
                     // ============================================ //
 
-                        function invalidInput () {
+                        function invalidInputForUserNameFunction () {
 
                             // UPADTE FORM UPDATE HOLD TEXTS  //
                             // ============================== //
 
-                                numberPlateHold = ``
-                                provinceCodeHold = ``
-                                descriptionHold = ``
+                                userNameHold = ``
+                                emailHold = ``
+                                specCodeHold = ``
 
                             // LOWERCASE FIELD ==================== //
                             // ==================================== //
 
-                                conditionCheckerField.style.textTransform = "lowercase"
-                                effectTertiaryField.style.textTransform = "lowercase"
+                                currentField.style.textTransform = "lowercase"
+                                otherFieldOne.style.textTransform = "lowercase"
+                                otherFieldTwo.style.textTransform = "lowercase"
 
-                            // REMOVE ALL INPUT FIELDS BELOW ====== //
+                            // CLOSE ALL OTHER FIELDS ============= //
                             // ==================================== //
 
-                                closeInputElementFunctionSpecial(provinceCodeMainContainer, provinceCodeHold)
-                                closeInputElementFunction(carDescriptionMainContainer, carDescriptionInputField)
-                                closeButtonElementFunction(submissionButtonMainContainer)
+                                closeAllOtherFieldsAndButtonsAfterUserNameFunction(
+                                    
+                                    userEmailMainContainer, 
+                                    userCodeMainContainer, 
+                                    noticeBoardMainContainer, 
+                                    submissionButtonMainContainer
+                                
+                                )
 
                         }
+
+                            
+
+                            // CLOSE OTHER FIELDS AFTER USERNAME FUNCTION //
+                            // ========================================== //
+
+                                function closeAllOtherFieldsAndButtonsAfterUserNameFunction (
+                                    
+                                    fieldToCloseOne, 
+                                    fieldToCloseTwo, 
+                                    noticeBoardToCloseOne, 
+                                    subButtonToCloseOne
+                                
+                                ) 
+                                
+                                {
+
+                                    // CLEAR FIELDS ===================== //
+                                    // ================================== //
+
+                                        fieldToCloseOne.children[0].children[0].value = ``
+
+                                        fieldToCloseTwo.children[0].children[0].value = ``
+
+                                    // CLOSE FIELDS ===================== //
+                                    // ================================== //
+
+                                        // CHECK IF FIELDS ARE ALREADY OFF //
+                                        // =============================== //
+
+                                            // IF FIELDS ARE OFF THEN SKIP = //
+                                            // ============================= //
+
+                                                if ( fieldToCloseOne.style.display == `${generalOffDisplayMode}` ) {
+
+                                                }
+
+                                            // IF FIELDS ARE ON THE TURN OFF //
+                                            // ============================= //
+
+                                                else {
+
+                                                    // CLOSE OTHER INPUT FIELDS  //
+                                                    // ========================= //
+
+                                                        // FADE OUT FIELDS ===== //
+                                                        // ===================== //
+
+                                                            fieldToCloseOne.style = `
+                                                            
+                                                                ${fadeOutInputElement}
+                                                            
+                                                            `
+
+                                                                setTimeout(() => {
+
+                                                                    fieldToCloseTwo.style = `
+                                                                    
+                                                                        ${fadeOutInputElement}
+                                                                    
+                                                                    `
+
+                                                                },50)
+
+                                                        // KILL FIELDS ========= //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                fieldToCloseOne.style = `
+                                                            
+                                                                    ${killInputElement}
+                                                                
+                                                                `
+
+                                                            },50)
+
+                                                            setTimeout(() => {
+
+                                                                fieldToCloseTwo.style = `
+                                                            
+                                                                    ${killInputElement}
+                                                                
+                                                                `
+
+                                                            },75)
+
+                                                    // CLOSE NOTICE BOARDS ===== //
+                                                    // ========================= //
+
+                                                        // FADE OUT NOTICE BOARD //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                noticeBoardToCloseOne.style = `
+                                                                
+                                                                    ${fadeOutInputElement}
+                                                                
+                                                                `
+
+                                                            }, 75)
+
+                                                        // KILL NOTICE BOARD === //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                noticeBoardToCloseOne.style = `
+                                                            
+                                                                    ${killInputElement}
+                                                                
+                                                                `
+
+                                                            },100)
+
+                                                    // CLOSE BUTTONS =========== //
+                                                    // ========================= //
+
+                                                        // FADE OUT SUB BUTTON = //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                subButtonToCloseOne.style = `
+                                                                
+                                                                    ${fadeOutButtonElement}
+                                                                
+                                                                `
+                                                                
+                                                            }, 100);
+
+                                                        // KILL SUB BUTTON ===== //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                subButtonToCloseOne.style = `
+                                                            
+                                                                    ${killButtonElement}
+                                                                
+                                                                `
+
+                                                            },125)
+
+                                                }
+
+                                        
+
+                                }
+
+
+
+                    // APPROVE FOR VALID INPUTS FUNCTION ========== //
+                    // ============================================ //
+
+                        function validInputForUserNameFunction (currentUpdateHoldString) {
+
+                            // UPADTE FORM UPDATE HOLD TEXTS  //
+                            // ============================== //
+
+                                currentUpdateHoldString = `${(currentField.value).toUpperCase()}`
+
+                            // LOWERCASE FIELD ==================== //
+                            // ==================================== //
+
+                                currentField.style.textTransform = "uppercase"
+
+                            // OPEN NEXT INPUT FIELD ============== //
+                            // ==================================== //
+
+                                openNextFieldAfterUserNameFunction(
+                                    
+                                    userEmailMainContainer
+                                
+                                )
+
+                        }
+
+                            
+
+                            // OPEN NEXT FIELD AFTER USERNAME FUNCTION == //
+                            // ========================================== //
+
+                                function openNextFieldAfterUserNameFunction (
+
+                                    nextFieldToOpen
+
+                                ) 
+                                
+                                {
+
+                                    // CLEAR FIELD FIRST ================ //
+                                    // ================================== //
+
+                                        nextFieldToOpen.children[0].children[0].value = ``
+
+                                    // OPEN NEXT FIELD ================== //
+                                    // ================================== //
+
+                                            // IF FIELDS ARE ON THEN SKIP //
+                                            // ========================== //
+
+                                                if ( nextFieldToOpen.style.display == `${generalOnDisplayMode}` ) {
+
+                                                }
+
+                                            // IF FIELDS ARE OFF THE TURN ON //
+                                            // ============================= //
+
+                                                else {
+
+                                                    // OPEN NEXT INPUT FIELD //
+                                                    // ===================== //
+
+                                                        // MAKE LIVE NEXT FIELD //
+                                                        // ==================== //
+
+                                                            nextFieldToOpen.style = `
+                                                            
+                                                                ${makeLiveInputElement}
+
+                                                            `
+
+                                                        // FADE IN NEXT FIELD = //
+                                                        // ==================== //
+
+                                                            setTimeout(() => {
+
+                                                                nextFieldToOpen.style = `
+                                                                
+                                                                    ${fadeInInputElement}
+
+                                                                `
+
+                                                            },50)
+
+                                                    // THEN FOCUS ON NEXT OPEN FIELD //
+                                                    // ============================= //
+
+                                                        nextFieldToOpen.children[0].children[0].focus()
+
+                                                }
+
+                                }
+
+
+
 
                 // CHECK FIELD VALIDITY =========================== //
                 // ================================================ //
@@ -808,25 +1170,25 @@
                     // IF FIELD IS EMPTY ========================== //
                     // ============================================ //
 
-                        if ( conditionCheckerField.value == "" || conditionCheckerField.value.length == 0 ) {
+                        if ( currentField.value == "" || currentField.value.length == 0 ) {
                                         
-                            invalidInput()
+                            invalidInputForUserNameFunction()
 
                         }
 
                     // IF FIELD IS NOT EMPTY AND BELOW 6 CHARS ==== //
                     // ============================================ //
 
-                        else if ( conditionCheckerField.value.length < checkerNumber ) {
+                        else if ( currentField.value.length < fieldIntakChareNumber ) {
                                         
-                            invalidInput()
+                            invalidInputForUserNameFunction()
 
                         }
 
                     // ElSE IF FIELD IS 6 CHARS =================== //
                     // ============================================ //
 
-                        else if ( conditionCheckerField.value.length >= checkerNumber ) {
+                        else if ( currentField.value.length >= fieldIntakChareNumber ) {
 
                             // CHECK IF INCLUDES NUMBERS ========= //
                             // =================================== //
@@ -836,24 +1198,521 @@
 
                                     if ( 
                                         
-                                            numberChecker.test(`${conditionCheckerField.value}`) == trueCheck && 
-                                            letterCheck.test(`${conditionCheckerField.value}`) == falseCheck &&
-                                            specialCharCheck.test(`${conditionCheckerField.value}`) == falseCheck
+                                            numberChecker.test(`${currentField.value}`) == trueCheck && 
+                                            letterCheck.test(`${currentField.value}`) == falseCheck &&
+                                            specialCharCheck.test(`${currentField.value}`) == falseCheck
                                         
                                         ) 
                                         
                                     {
                                         
-                                        validCapeCodesInput()
+                                        invalidInputForUserNameFunction()
 
                                     }
 
-                                // IF DOES NOT INCLUDE NUMBERS === //
+                                // IF ONLY INCLUDES SPEC CHARS === //
                                 // =============================== //
+
+                                    else if ( 
+                                        
+                                            numberChecker.test(`${currentField.value}`) == falseCheck && 
+                                            letterCheck.test(`${currentField.value}`) == falseCheck &&
+                                            specialCharCheck.test(`${currentField.value}`) == trueCheck
+                                        
+                                        ) 
+                                        
+                                    {
+                                        
+                                        invalidInputForUserNameFunction()
+
+                                    }
+
+                                // IF SPEC CHARS LETTERS AND NUMBERS COMBO //
+                                // ======================================= //
+
+                                    else if ( 
+                                        
+                                            numberChecker.test(`${currentField.value}`) == trueCheck && 
+                                            letterCheck.test(`${currentField.value}`) == trueCheck &&
+                                            specialCharCheck.test(`${currentField.value}`) == trueCheck
+                                        
+                                        ) 
+                                        
+                                    {
+                                        
+                                        invalidInputForUserNameFunction()
+
+                                    }
+
+                                // IF LETTERS AND SPEC CHARS COMBO //
+                                // =============================== //
+
+                                    else if ( 
+                                        
+                                            numberChecker.test(`${currentField.value}`) == falseCheck && 
+                                            letterCheck.test(`${currentField.value}`) == trueCheck &&
+                                            specialCharCheck.test(`${currentField.value}`) == trueCheck
+                                        
+                                        ) 
+                                        
+                                    {
+                                        
+                                        invalidInputForUserNameFunction()
+
+                                    }
+
+                                // IF DOES NOT INCLUDE NUMBERS OR SPEC CHARS //
+                                // ========================================= //
 
                                     else {
 
-                                        invalidInput()
+                                        validInputForUserNameFunction(userNameHold)
+
+                                    }
+
+                        }
+
+            }
+
+        // FOR USER EMAIL FUNCTIONS =============================== //
+        // ======================================================== //
+
+            function userEmailFieldIntakeParamsFunction (
+                
+                currentField, 
+                otherFieldOne, 
+                fieldIntakChareNumber
+            
+            ) 
+            
+            {
+
+                // IN FUNCTION SUB FUNCTIONS ====================== //
+                // ================================================ //
+
+                    // RESET FOR INVALID INPUTS FUNCTION ========== //
+                    // ============================================ //
+
+                        function invalidInputForUserEmailFunction () {
+
+                            // UPADTE FORM UPDATE HOLD TEXTS  //
+                            // ============================== //
+
+                                emailHold = ``
+                                specCodeHold = ``
+
+                            // LOWERCASE FIELD ==================== //
+                            // ==================================== //
+
+                                currentField.style.textTransform = "lowercase"
+                                otherFieldOne.style.textTransform = "lowercase"
+
+                            // CLOSE ALL OTHER FIELDS ============= //
+                            // ==================================== //
+
+                                closeAllOtherFieldsAndButtonsAfterUserEmailFunction(
+                                    
+                                    userCodeMainContainer, 
+                                    noticeBoardMainContainer, 
+                                    submissionButtonMainContainer
+                                
+                                )
+
+                        }
+
+                            
+
+                            // CLOSE OTHER FIELDS AFTER USERNAME FUNCTION //
+                            // ========================================== //
+
+                                function closeAllOtherFieldsAndButtonsAfterUserEmailFunction (
+                                    
+                                    fieldToCloseOne, 
+                                    noticeBoardToCloseOne, 
+                                    subButtonToCloseOne
+                                
+                                ) 
+                                
+                                {
+
+                                    // CLEAR FIELDS ===================== //
+                                    // ================================== //
+
+                                        fieldToCloseOne.children[0].children[0].value = ``
+
+                                    // CLOSE FIELDS ===================== //
+                                    // ================================== //
+
+                                        // CHECK IF FIELDS ARE ALREADY OFF //
+                                        // =============================== //
+
+                                            // IF FIELDS ARE OFF THEN SKIP = //
+                                            // ============================= //
+
+                                                if ( fieldToCloseOne.style.display == `${generalOffDisplayMode}` ) {
+
+                                                }
+
+                                            // IF FIELDS ARE ON THE TURN OFF //
+                                            // ============================= //
+
+                                                else {
+
+                                                    // CLOSE OTHER INPUT FIELDS  //
+                                                    // ========================= //
+
+                                                        // FADE OUT FIELDS ===== //
+                                                        // ===================== //
+
+                                                            fieldToCloseOne.style = `
+                                                            
+                                                                ${fadeOutInputElement}
+                                                            
+                                                            `
+
+                                                        // KILL FIELDS ========= //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                fieldToCloseOne.style = `
+                                                            
+                                                                    ${killInputElement}
+                                                                
+                                                                `
+
+                                                            },50)
+
+                                                    // CLOSE NOTICE BOARDS ===== //
+                                                    // ========================= //
+
+                                                        // FADE OUT NOTICE BOARD //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                noticeBoardToCloseOne.style = `
+                                                                
+                                                                    ${fadeOutInputElement}
+                                                                
+                                                                `
+
+                                                            }, 75)
+
+                                                        // KILL NOTICE BOARD === //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                noticeBoardToCloseOne.style = `
+                                                            
+                                                                    ${killInputElement}
+                                                                
+                                                                `
+
+                                                            },100)
+
+                                                    // CLOSE BUTTONS =========== //
+                                                    // ========================= //
+
+                                                        // FADE OUT SUB BUTTON = //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                subButtonToCloseOne.style = `
+                                                                
+                                                                    ${fadeOutButtonElement}
+                                                                
+                                                                `
+                                                                
+                                                            }, 100);
+
+                                                        // KILL SUB BUTTON ===== //
+                                                        // ===================== //
+
+                                                            setTimeout(() => {
+
+                                                                subButtonToCloseOne.style = `
+                                                            
+                                                                    ${killButtonElement}
+                                                                
+                                                                `
+
+                                                            },125)
+
+                                                }
+
+                                        
+
+                                }
+
+
+
+                    // APPROVE FOR VALID INPUTS FUNCTION ========== //
+                    // ============================================ //
+
+                        function validInputForUserEmailFunction (currentUpdateHoldString) {
+
+                            // UPADTE FORM UPDATE HOLD TEXTS  //
+                            // ============================== //
+
+                                currentUpdateHoldString = `${(currentField.value).toUpperCase()}`
+
+                            // LOWERCASE FIELD ==================== //
+                            // ==================================== //
+
+                                currentField.style.textTransform = "uppercase"
+
+                            // OPEN NEXT INPUT FIELD ============== //
+                            // ==================================== //
+
+                                openNextFieldAfterUserEmailFunction(
+                                    
+                                    userCodeMainContainer, 
+                                    noticeBoardMainContainer, 
+                                    submissionButtonMainContainer
+                                
+                                )
+
+                        }
+
+                            
+
+                            // OPEN NEXT FIELD AFTER USERNAME FUNCTION == //
+                            // ========================================== //
+
+                                function openNextFieldAfterUserEmailFunction (
+
+                                    nextFieldToOpen, 
+                                    noticeBoardToOpen, 
+                                    submitButtonToOpen
+
+                                ) 
+                                
+                                {
+
+                                    // CLEAR FIELD FIRST ================ //
+                                    // ================================== //
+
+                                        nextFieldToOpen.children[0].children[0].value = ``
+
+                                    // OPEN NEXT FIELD ================== //
+                                    // ================================== //
+
+                                            // IF FIELDS ARE ON THEN SKIP //
+                                            // ========================== //
+
+                                                if ( nextFieldToOpen.style.display == `${generalOnDisplayMode}` ) {
+
+                                                }
+
+                                            // IF FIELDS ARE OFF THE TURN ON //
+                                            // ============================= //
+
+                                                else {
+
+                                                    // OPEN NEXT INPUT FIELD //
+                                                    // ===================== //
+
+                                                        // MAKE LIVE NEXT FIELD //
+                                                        // ==================== //
+
+                                                            nextFieldToOpen.style = `
+                                                            
+                                                                ${makeLiveInputElement}
+
+                                                            `
+
+                                                        // FADE IN NEXT FIELD = //
+                                                        // ==================== //
+
+                                                            setTimeout(() => {
+
+                                                                nextFieldToOpen.style = `
+                                                                
+                                                                    ${fadeInInputElement}
+
+                                                                `
+
+                                                            },50)
+
+
+
+                                                    // OPEN NOTICE BOARDS == //
+                                                    // ===================== //
+
+                                                        // MAKE LIVE NOTICE BOARD //
+                                                        // ====================== //
+
+                                                            setTimeout (() => {
+
+                                                                noticeBoardToOpen.style = `
+                                                                
+                                                                    ${makeLiveNoticeBoardElement}
+
+                                                                `
+
+                                                            }, 50)
+
+                                                        // FADE IN NOTICE BOARD = //
+                                                        // ====================== //
+
+                                                            setTimeout(() => {
+
+                                                                noticeBoardToOpen.style = `
+                                                                
+                                                                    ${fadeInNoticeBoardElement}
+
+                                                                `
+
+                                                            },75)
+
+
+
+                                                    // OPEN SUBMIT BUTTON == //
+                                                    // ===================== //
+
+                                                        // MAKE LIVE SUBMIT BUTTON //
+                                                        // ======================= //
+
+                                                            setTimeout (() => {
+
+                                                                submitButtonToOpen.style = `
+                                                                
+                                                                    ${makeLiveButtonElement}
+
+                                                                `
+
+                                                            }, 75)
+
+                                                        // FADE IN SUBMIT BUTTON = //
+                                                        // ======================= //
+
+                                                            setTimeout (() => {
+
+                                                                submitButtonToOpen.style = `
+                                                                
+                                                                    ${fadeInButtonElement}
+
+                                                                `
+
+                                                            }, 100)
+
+
+
+                                                }
+
+                                    // MAKE UPPERCASE =================== //
+                                    // ================================== //
+
+                                        nextFieldToOpen.children[0].children[0].style.textTransform = "uppercase"
+
+                                }
+
+
+
+                    // GENERATE USER LOGIN CODE FUNCTION ========== //
+                    // ============================================ //
+
+                        function generateUserGhost () {
+
+                            // RUN GHOST CREATION ================= //
+                            // ==================================== //
+
+                                var ghostLightCreate = [6, 8, 10]
+
+                                    var ghostLightSelect = ghostLightCreate[Math.floor(Math.random()*ghostLightCreate.length)];
+
+                                for ( generateCount = 0; generateCount < ghostLightSelect; generateCount++ ) {
+
+                                    // PICK PLASMA AND CREATE GHOST //
+                                    // ============================ //
+
+                                        specCodeHold += `${plasmaMaps[Math.floor(Math.random()*plasmaMaps.length)]}`
+
+                                }
+
+                                    // UPDATE GHOST FIELD ========= //
+                                    // ============================ //
+
+                                        userCodeInputField.value = `${(specCodeHold).toUpperCase()}`
+
+                        }
+
+
+
+
+                // CHECK FIELD VALIDITY =========================== //
+                // ================================================ //
+
+                    // IF FIELD IS EMPTY ========================== //
+                    // ============================================ //
+
+                        if ( currentField.value == "" || currentField.value.length == 0 ) {
+                                        
+                            invalidInputForUserEmailFunction()
+
+                        }
+
+                    // IF FIELD IS NOT EMPTY AND BELOW 6 CHARS ==== //
+                    // ============================================ //
+
+                        else if ( currentField.value.length < fieldIntakChareNumber ) {
+                                        
+                            invalidInputForUserEmailFunction()
+
+                        }
+
+                    // ElSE IF FIELD IS 6 CHARS =================== //
+                    // ============================================ //
+
+                        else if ( currentField.value.length >= fieldIntakChareNumber ) {
+
+
+                            // CHECK IF INPUT MATCHES EMAIL INPUT REQS //
+                            // ======================================= //
+
+                                // IF HAS NEEDED SPEC CHARS ========== //
+                                // =================================== //
+
+                                    if ( 
+                                        
+                                            currentField.value.includes("@") &&
+
+                                            ( 
+                                                
+                                                currentField.value.includes("outlook") ||
+                                                currentField.value.includes("proton") ||
+                                                currentField.value.includes("yahoo") || 
+                                                currentField.value.includes("gmail")
+                                            
+                                            ) &&
+
+                                            ( 
+                                                
+                                                currentField.value.includes(".com") ||
+                                                currentField.value.includes(".co.za") ||
+                                                currentField.value.includes(".me") ||
+                                                currentField.value.includes(".io") 
+                                            
+                                            )
+                                        
+                                        ) 
+                                        
+                                    {
+
+                                        validInputForUserEmailFunction(emailHold)
+                                        generateUserGhost()
+
+                                    }
+
+                                // IF MISSING NEEDED SPEC CHARS ====== //
+                                // =================================== //
+
+                                    else {
+
+                                        invalidInputForUserEmailFunction()
 
                                     }
 
@@ -1051,49 +1910,88 @@
                                     // CLOSE AND RESET GHOST BODY = //
                                     // ============================ //
 
-                                        // FOR OTHER GHOST ONE ==== //
-                                        // ======================== //
+                                        // CHECK IF BODIES ARE ALREADY CLOSED //
+                                        // ================================== //
 
-                                            otherGhostBodyOne.style = `
-                                            
-                                                ${ghostBodyOffModeFadeOut}
+                                            // FOR BODY ONE ================= //
+                                            // ============================== //
 
-                                            `
+                                                // IF ALREADY CLOSED THEN SKIP //
+                                                // =========================== //
 
-                                                // KILL BODY ====== //
-                                                // ================ //
+                                                    if ( otherGhostBodyOne.style.display == `${(generalOffDisplayMode).toLowerCase()}` ) {
 
-                                                    setTimeout(() => {
+                                                    }
 
-                                                        otherGhostBodyOne.style = `
-                                                        
-                                                            ${ghostBodyOffMode}
+                                                // IF ALREADY CLOSED THEN SKIP //
+                                                // =========================== //
 
-                                                        `
+                                                    else {
 
-                                                    }, 200)
+                                                        // FOR OTHER GHOST ONE //
+                                                        // =================== //
 
-                                        // FOR OTHER GHOST ONE ==== //
-                                        // ======================== //
+                                                            otherGhostBodyOne.style = `
+                                                            
+                                                                ${ghostBodyOffModeFadeOut}
 
-                                            otherGhostBodyTwo.style = `
-                                            
-                                                ${ghostBodyOffModeFadeOut}
+                                                            `
 
-                                            `
+                                                                // KILL BODY = //
+                                                                // =========== //
 
-                                                // KILL BODY ====== //
-                                                // ================ //
+                                                                    setTimeout(() => {
 
-                                                    setTimeout(() => {
+                                                                        otherGhostBodyOne.style = `
+                                                                        
+                                                                            ${ghostBodyOffMode}
 
-                                                        otherGhostBodyTwo.style = `
-                                                        
-                                                            ${ghostBodyOffMode}
+                                                                        `
 
-                                                        `
+                                                                    }, 200)
 
-                                                    }, 200)
+                                                    }
+
+
+
+                                            // FOR BODY TWO ================= //
+                                            // ============================== //
+
+                                                // IF ALREADY CLOSED THEN SKIP //
+                                                // =========================== //
+
+                                                    if ( otherGhostBodyTwo.style.display == `${(generalOffDisplayMode).toLowerCase()}` ) {
+
+                                                    }
+
+                                                // IF ALREADY CLOSED THEN SKIP //
+                                                // =========================== //
+
+                                                    else {
+
+                                                        // FOR OTHER GHOST TWO //
+                                                        // =================== //
+
+                                                            otherGhostBodyTwo.style = `
+                                                            
+                                                                ${ghostBodyOffModeFadeOut}
+
+                                                            `
+
+                                                                // KILL BODY = //
+                                                                // =========== //
+
+                                                                    setTimeout(() => {
+
+                                                                        otherGhostBodyTwo.style = `
+                                                                        
+                                                                            ${ghostBodyOffMode}
+
+                                                                        `
+
+                                                                    }, 200)
+
+                                                    }
 
                             }
 
@@ -1193,6 +2091,42 @@
 
 // EVENTS AND ACTIONS ============================================= //
 // ================================================================ //
+
+    // EVENTS FOR INPUT FIELDS CONTROL ============================ //
+    // ============================================================ //
+
+        // EVENTS FOR USERNAME INPUT FIELD ======================== //
+        // ======================================================== //
+
+            userNameInputField.addEventListener("keyup", function () {
+
+                userNameFieldIntakeParamsFunction(
+
+                    userNameInputField, 
+                    userEmailInputField, 
+                    userCodeInputField, 
+                    10, 
+                    true, 
+                    false
+
+                )
+
+            })
+
+        // EVENTS FOR USER EMAIL INPUT FIELD ====================== //
+        // ======================================================== //
+
+            userEmailInputField.addEventListener("keyup", function () {
+
+                userEmailFieldIntakeParamsFunction(
+
+                    userEmailInputField, 
+                    userCodeInputField, 
+                    10
+
+                )
+
+            })
 
     // EVENTS FOR GHOST BODIES CONTROL ============================ //
     // ============================================================ //

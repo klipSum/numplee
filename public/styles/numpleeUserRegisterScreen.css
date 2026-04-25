@@ -184,7 +184,9 @@
                                     .userRegisterEmailInputFieldContainer{
 
                                         width:100%;
-                                        margin:20px 0px 0px 0px;
+                                        margin:0px 0px 0px 0px;
+                                        opacity:0;
+                                        display:none;
                                         position:relative;
                                         transition:all 400ms ease;
                                         -o-transition:all 400ms ease;
@@ -238,7 +240,10 @@
                                     .userRegisterSpecCodeInputFieldContainer{
 
                                         width:100%;
-                                        margin:20px 0px 0px 0px;
+                                        margin:0px 0px 0px 0px;
+                                        cursor:not-allowed;
+                                        opacity:0;
+                                        display:none;
                                         position:relative;
                                         transition:all 400ms ease;
                                         -o-transition:all 400ms ease;
@@ -251,6 +256,7 @@
                                         .userRegisterSpecCodeInputFieldElement{
 
                                             width:100%;
+                                            cursor:not-allowed;
                                             z-index:2;
                                             padding:10px 0px;
                                             position:relative;
@@ -268,14 +274,16 @@
                                             .inputScreenSpecCodeInputBoxActual{
 
                                                 width:90%;
-                                                color:#2c2c2c;
+                                                color:#9f9e9e;
+                                                cursor:not-allowed;
                                                 border:0px solid rgba(0,0,0,0);
                                                 outline:none;
                                                 padding:10px 0px;
                                                 position:relative;
-                                                font-size:15px;
+                                                font-size:18px;
                                                 text-align:center;
                                                 background:rgba(0,0,0,0);
+                                                font-weight:400;
                                                 letter-spacing:1px;
                                                 transition:all 400ms ease;
                                                 -o-transition:all 400ms ease;
@@ -292,7 +300,9 @@
                                     .userRegisterSpecCodeCopyTextInstructionsContainer{
 
                                         width:100%;
-                                        margin:20px 0px 0px 0px;
+                                        margin:0px 0px 0px 0px;
+                                        opacity:0;
+                                        display:none;
                                         position:relative;
                                         background:#FFF6CB;
                                         border-radius:8px;
@@ -330,9 +340,9 @@
 
                                         width:100%;
                                         height:58px;
-                                        margin:20px 0px 0px 0px;
-                                        opacity:1;
-                                        display:block;
+                                        margin:0px 0px 0px 0px;
+                                        opacity:0;
+                                        display:none;
                                         position:relative;
                                         transition:all 400ms ease;
                                         -o-transition:all 400ms ease;

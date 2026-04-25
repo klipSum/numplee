@@ -2323,9 +2323,6 @@
 
                                         shellButtonMain.appendChild(shellButtonActual)
 
-                // FUNCTIONS FOR USE IN FUNCTION ================== //
-                // ================================================ //
-
                 // EVENTS FOR USE IN FUNCTION ===================== //
                 // ================================================ //
 

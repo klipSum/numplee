@@ -371,6 +371,103 @@ const open = process.env.takeOpenly
 
                 })
 
+            // FOR INPUT PAGE ---------------------------------------------------
+            // //////////////////////////////////////////////////////////////////
+
+                app.post("/register", async (req, res) => {
+                        
+                        mongoose.connect(`${open}`)
+                
+                    // FUNCTION FOR GHOST CREATION ------------------------------
+                    // ----------------------------------------------------------
+
+                        function createNewGhost () {
+
+                            // CREATE NEW GHOST ENTRY -----------------------------------
+                            // ----------------------------------------------------------
+
+                                let newGhost = new spawnedUserProfile ({
+
+                                    // GHOST SUBMISSION ---------------------------------
+                                    // --------------------------------------------------
+
+                                        spawnedUserStatusIndicator:"spawned",
+                                        spawnedUsername:req.body.ghostNameIntake,
+                                        spawnedUserEmail:req.body.ghostEmailIntake,
+                                        spawnedUserCode:req.body.ghostCodeIntake,
+                                        spawnedUserinceptionDate:req.body.dateIntake,
+                                        spawnedUserinceptionTime:req.body.timeIntake
+
+                                })
+
+                            // SAVE GHOST TO MONGO DB -----------------------------------
+                            // ----------------------------------------------------------
+
+                                newGhost.save()
+
+                        }
+                
+                    // CHECK IF ANY DUPLICATE GHOSTS ----------------------------
+                    // ----------------------------------------------------------
+
+                        try {
+
+                            var ghosts = await spawnedUserProfile.findOne({spawnedUserEmail: req.body.ghostEmailIntake})
+
+                            var arraysForUse = ghosts.plateNumber
+                            var ghostMail = ghosts.carDescription
+
+                                // CHECK IF MATCH EXISTS ========================
+                                // ==============================================
+
+                                    if ( arraysForUse == req.body.ghostEmailIntake ) {
+
+                                        console.log("ghost match...")
+
+                                        console.log(`${ghostMail}`)
+
+
+
+                                    }
+
+                                    else if ( arraysForUse  == null || arraysForUse == undefined) {
+
+                                        console.log("ghost not match...")
+
+                                    }
+
+                                    else {
+
+                                        // IF NO MATCHES THEN CREATE NEW GHOST ==
+                                        // ======================================
+
+                                            createNewGhost()
+
+                                    }
+
+                        }
+
+
+                        catch(error) {
+
+
+                            console.log("KOS: " + ghosts)
+
+                            // CREATE NEW ENTRY AS NO MATCHES PRESENT ===========
+                            // ==================================================
+
+                                createNewGhost()
+
+                            
+                        }
+
+                    // FINALLY RERENDER PAGE WHEN DONE --------------------------
+                    // ----------------------------------------------------------
+
+                        res.redirect("/register")
+
+                })
+
             
 
 

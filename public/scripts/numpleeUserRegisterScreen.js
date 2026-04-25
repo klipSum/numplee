@@ -1638,6 +1638,12 @@
 
                                         userCodeInputField.value = `${(specCodeHold).toUpperCase()}`
 
+                                    // UPDATE GHOST INTAKES ======= //
+                                    // ============================ //
+
+                                        userNameHold = userNameInputField.value
+                                        emailHold = userEmailInputField.value
+
                         }
 
 
@@ -1730,6 +1736,533 @@
 
         // GHOST CREATION FUNCTION ================================ //
         // ======================================================== //
+            
+            function ghostFunction () {
+
+                // VARIABLES FOR USE IN FUNCTION ================== //
+                // ================================================ //
+
+                    // STRING VARIABLES =========================== //
+                    // ============================================ //
+
+                        // MONTH MAPPING ARRAY ==================== //
+                        // ======================================== //
+
+                            var monMap = [
+
+                                "JAN",
+                                "FEB",
+                                "MAR",
+                                "APR",
+                                "MAY",
+
+                                "JUN",
+                                "JUL",
+                                "AUG",
+                                "SEP",
+                                "OCT",
+
+                                "NOV",
+                                "DEC"
+
+                            ]
+
+                        // HOUR MAPPING ARRAY ===================== //
+                        // ======================================== //
+
+                            var hourMap = [
+
+                                "00",
+                                "01",
+                                "02",
+                                "03",
+                                "04",
+
+                                "05",
+                                "06",
+                                "07",
+                                "08",
+                                "09",
+
+                                "10",
+                                "11",
+                                "12",
+                                "13",
+                                "14",
+
+                                "15",
+                                "16",
+                                "17",
+                                "18",
+                                "19",
+
+                                "20",
+                                "21",
+                                "22",
+                                "23"
+
+                            ]
+
+                        // DATE AND TIME RETRIEVE ================= //
+                        // ======================================== //
+
+                            // GENERAL DATE BUILD STRING ========== //
+                            // ==================================== //
+
+                                var dateMainString = new Date()
+
+                                    // DATE CREATION ============== //
+                                    // ============================ //
+
+                                        // FOR DAY STRING ========= //
+                                        // ======================== //
+
+                                            var getDate = dateMainString.getDate()
+
+                                        // FOR MONTH STRING ======= //
+                                        // ======================== //
+
+                                            var getMonth = dateMainString.getMonth()
+
+                                                var mapMonth = `${monMap[getMonth]}`
+
+                                        // FOR YEAR STRING ======== //
+                                        // ======================== //
+
+                                            var getYear = dateMainString.getFullYear()
+
+                                        // FOR DATE GATHER ======== //
+                                        // ======================== //
+
+                                            var dateConsolidatedString = `${getDate} ${mapMonth} ${getYear}`
+
+
+                                    // TIME CREATION ============== //
+                                    // ============================ //
+
+                                        // FOR HOURS ============== //
+                                        // ======================== //
+
+                                            var getHour = dateMainString.getHours()
+
+                                                var mapHour = `${hourMap[getHour]}`
+
+                                        // FOR MINUTES ============ //
+                                        // ======================== //
+
+                                            var getMinute = dateMainString.getMinutes()
+
+                                        // FOR TIME GATHER ======== //
+                                        // ======================== //
+
+                                            var timeConsolidatedString = `${mapHour} : ${getMinute}`
+
+                    // ELEMENT VARIABLES ========================== //
+                    // ============================================ //
+
+                    // CREATION VARIABLES ========================= //
+                    // ============================================ //
+
+                        // CREATE ================================= //
+                        // ======================================== //
+
+                            var ghostShell = document.createElement(`form`)
+
+                                // SHELL NAME ===================== //
+                                // ================================ //
+
+                                    var shellNameMain = document.createElement(`div`)
+
+                                        var shellNameResizer = document.createElement(`div`)
+
+                                            var shellNameInput = document.createElement(`input`)
+
+                                // SHELL MAIL ===================== //
+                                // ================================ //
+
+                                    var shellMailMain = document.createElement(`div`)
+
+                                        var shellMailResizer = document.createElement(`div`)
+
+                                            var shellMailInput = document.createElement(`input`)
+
+                                // SHELL CODE ===================== //
+                                // ================================ //
+
+                                    var shellCodeMain = document.createElement(`div`)
+
+                                        var shellCodeResizer = document.createElement(`div`)
+
+                                            var shellCodeInput = document.createElement(`input`)
+
+                                // SHELL DATE ===================== //
+                                // ================================ //
+
+                                    var shellDateMain = document.createElement(`div`)
+
+                                        var shellDateResizer = document.createElement(`div`)
+
+                                            var shellDateInput = document.createElement(`input`)
+
+                                // SHELL TIME ===================== //
+                                // ================================ //
+
+                                    var shellTimeMain = document.createElement(`div`)
+
+                                        var shellTimeResizer = document.createElement(`div`)
+
+                                            var shellTimeInput = document.createElement(`input`)
+
+                                // SHELL BUTTON =================== //
+                                // ================================ //
+
+                                    var shellButtonMain = document.createElement(`div`)
+
+                                        var shellButtonActual = document.createElement(`button`)
+
+                        // CLASSIFICATION ========================= //
+                        // ======================================== //
+
+                            ghostShell.className = `subzeroBoxContentFormContainer`
+
+                                // SHELL NAME ===================== //
+                                // ================================ //
+
+                                    shellNameMain.className = `subzeroUserNameIntakeContainer`
+
+                                        shellNameResizer.className = `subzeroUserNameIntakeElement`
+
+                                            shellNameInput.className = `subzeroUserNameIntakeActual`
+
+                                // SHELL MAIL ===================== //
+                                // ================================ //
+
+                                    shellMailMain.className = `subzeroUserEmailSelectIntakeContainer`
+
+                                        shellMailResizer.className = `subzeroUserEmailSelectIntakeElement`
+
+                                            shellMailInput.className = `subzeroUserEmailSelectIntakeActual`
+
+                                // SHELL CODE ===================== //
+                                // ================================ //
+
+                                    shellCodeMain.className = `subzeroUserCodeIntakeContainer`
+
+                                        shellCodeResizer.className = `subzeroUserCodeIntakeElement`
+
+                                            shellCodeInput.className = `subzeroUserCodeIntakeActual`
+
+                                // SHELL DATE ===================== //
+                                // ================================ //
+
+                                    shellDateMain.className = `subzeroTypeDateIntakeContainer`
+
+                                        shellDateResizer.className = `subzeroTypeDateIntakeElement`
+
+                                            shellDateInput.className = `subzeroTypeDateIntakeActual`
+
+                                // SHELL TIME ===================== //
+                                // ================================ //
+
+                                    shellTimeMain.className = `subzeroTypeTimeIntakeContainer`
+
+                                        shellTimeResizer.className = `subzeroTypeTimeIntakeElement`
+
+                                            shellTimeInput.className = `subzeroTypeTimeIntakeActual`
+
+                                // SHELL BUTTON =================== //
+                                // ================================ //
+
+                                    shellButtonMain.className = `subzeroSubmissionButtonContainer`
+
+                                        shellButtonActual.className = `subzeroSubmissionButtonActual`
+
+                        // STYLE ================================== //
+                        // ======================================== //
+
+                            ghostShell.style = `
+                            
+                                ${formGeneralStyling}
+
+                            `
+
+                                // SHELL NAME ===================== //
+                                // ================================ //
+
+                                    shellNameMain.style = `
+                                    
+                                        ${formFieldStarterMainContainer}
+
+                                    `
+
+                                        shellNameResizer.style = `
+                                        
+                                            ${formFieldStarterContentResizer}
+
+                                        `
+
+                                            shellNameInput.style = `
+                                            
+                                                ${formFieldStarterInputTextBlock}
+
+                                            `
+
+                                // SHELL MAIL ===================== //
+                                // ================================ //
+
+                                    shellMailMain.style = `
+                                    
+                                        ${formFieldSecondariesMainContainer}
+
+                                    `
+
+                                        shellMailResizer.style = `
+                                        
+                                            ${formFieldSecondariesContentResizer}
+
+                                        `
+
+                                            shellMailInput.style = `
+                                            
+                                                ${formFieldSecondariesInputTextBlock}
+
+                                            `
+
+                                // SHELL CODE ===================== //
+                                // ================================ //
+
+                                    shellCodeMain.style = `
+                                    
+                                        ${formFieldSecondariesMainContainer}
+
+                                    `
+
+                                        shellCodeResizer.style = `
+                                        
+                                            ${formFieldSecondariesContentResizer}
+
+                                        `
+
+                                            shellCodeInput.style = `
+                                            
+                                                ${formFieldSecondariesInputTextBlock}
+
+                                            `
+
+                                // SHELL DATE ===================== //
+                                // ================================ //
+
+                                    shellDateMain.style = `
+                                    
+                                        ${formFieldSecondariesMainContainer}
+
+                                    `
+
+                                        shellDateResizer.style = `
+                                        
+                                            ${formFieldSecondariesContentResizer}
+
+                                        `
+
+                                            shellDateInput.style = `
+                                            
+                                                ${formFieldSecondariesInputTextBlock}
+
+                                            `
+
+                                // SHELL TIME ===================== //
+                                // ================================ //
+
+                                    shellTimeMain.style = `
+                                    
+                                        ${formFieldSecondariesMainContainer}
+
+                                    `
+
+                                        shellTimeResizer.style = `
+                                        
+                                            ${formFieldSecondariesContentResizer}
+
+                                        `
+
+                                            shellTimeInput.style = `
+                                            
+                                                ${formFieldSecondariesInputTextBlock}
+
+                                            `
+
+                                // SHELL BUTTON =================== //
+                                // ================================ //
+
+                                    shellButtonMain.style = `
+                                    
+                                        ${formSubmissionButtonMain}
+
+                                    `
+
+                                        shellButtonActual.style = `
+                                        
+                                            ${formSubmissionButtonActual}
+
+                                        `
+
+                        // ATTRIBUTES ============================= //
+                        // ======================================== //
+
+                            ghostShell.setAttribute("method", "post")
+                            ghostShell.setAttribute("action", "/register")
+
+                                // SHELL NAME ===================== //
+                                // ================================ //
+
+                                    shellNameInput.setAttribute("id", "ghostNameIntake")
+                                    shellNameInput.setAttribute("name", "ghostNameIntake")
+                                    shellNameInput.setAttribute("type", "text")
+                                    shellNameInput.setAttribute("readonly", true)
+
+                                // SHELL MAIL ===================== //
+                                // ================================ //
+
+                                    shellMailInput.setAttribute("id", "ghostEmailIntake")
+                                    shellMailInput.setAttribute("name", "ghostEmailIntake")
+                                    shellMailInput.setAttribute("type", "text")
+                                    shellMailInput.setAttribute("readonly", true)
+
+                                // SHELL CODE ===================== //
+                                // ================================ //
+
+                                    shellCodeInput.setAttribute("id", "ghostCodeIntake")
+                                    shellCodeInput.setAttribute("name", "ghostCodeIntake")
+                                    shellCodeInput.setAttribute("type", "text")
+                                    shellCodeInput.setAttribute("readonly", true)
+
+                                // SHELL DATE ===================== //
+                                // ================================ //
+
+                                    shellDateInput.setAttribute("id", "dateIntake")
+                                    shellDateInput.setAttribute("name", "dateIntake")
+                                    shellDateInput.setAttribute("type", "text")
+                                    shellDateInput.setAttribute("readonly", true)
+
+                                // SHELL TIME ===================== //
+                                // ================================ //
+
+                                    shellTimeInput.setAttribute("id", "timeIntake")
+                                    shellTimeInput.setAttribute("name", "timeIntake")
+                                    shellTimeInput.setAttribute("type", "text")
+                                    shellTimeInput.setAttribute("readonly", true)
+
+                                // SHELL BUTTON =================== //
+                                // ================================ //
+
+                                    shellButtonActual.setAttribute("type", "register user")
+
+                        // TEXT INPUTS ============================ //
+                        // ======================================== //
+
+                                // SHELL NAME ===================== //
+                                // ================================ //
+
+                                    shellNameInput.value = `${String(userNameInputField.value).toUpperCase()}`
+
+                                // SHELL MAIL ===================== //
+                                // ================================ //
+
+                                    shellMailInput.value = `${String(userEmailInputField.value).toUpperCase()}`
+
+                                // SHELL CODE ===================== //
+                                // ================================ //
+
+                                    shellCodeInput.value = `${String(userCodeInputField.value).toUpperCase()}`
+
+                                // SHELL DATE ===================== //
+                                // ================================ //
+
+                                    shellDateInput.value = `${String(dateConsolidatedString).toUpperCase()}`
+
+                                // SHELL TIME ===================== //
+                                // ================================ //
+
+                                    shellTimeInput.value = `${String(timeConsolidatedString).toUpperCase()}`
+
+                                // SHELL BUTTON =================== //
+                                // ================================ //
+
+                                    shellButtonActual.value = `register user`
+                                    shellButtonActual.textContent = `register user`
+
+                        // APPEND ================================= //
+                        // ======================================== //
+
+                            getGhost.appendChild(ghostShell)
+
+                                // SHELL NAME ===================== //
+                                // ================================ //
+
+                                    ghostShell.appendChild(shellNameMain)
+
+                                        shellNameMain.appendChild(shellNameResizer)
+
+                                            shellNameResizer.appendChild(shellNameInput)
+
+                                // SHELL MAIL ===================== //
+                                // ================================ //
+
+                                    ghostShell.appendChild(shellMailMain)
+
+                                        shellMailMain.appendChild(shellMailResizer)
+
+                                            shellMailResizer.appendChild(shellMailInput)
+
+                                // SHELL CODE ===================== //
+                                // ================================ //
+
+                                    ghostShell.appendChild(shellCodeMain)
+
+                                        shellCodeMain.appendChild(shellCodeResizer)
+
+                                            shellCodeResizer.appendChild(shellCodeInput)
+
+                                // SHELL DATE ===================== //
+                                // ================================ //
+
+                                    ghostShell.appendChild(shellDateMain)
+
+                                        shellDateMain.appendChild(shellDateResizer)
+
+                                            shellDateResizer.appendChild(shellDateInput)
+
+                                // SHELL TIME ===================== //
+                                // ================================ //
+
+                                    ghostShell.appendChild(shellTimeMain)
+
+                                        shellTimeMain.appendChild(shellTimeResizer)
+
+                                            shellTimeResizer.appendChild(shellTimeInput)
+
+                                // SHELL BUTTON =================== //
+                                // ================================ //
+
+                                    ghostShell.appendChild(shellButtonMain)
+
+                                        shellButtonMain.appendChild(shellButtonActual)
+
+                // EVENTS FOR USE IN FUNCTION ===================== //
+                // ================================================ //
+
+                    // SUBMIT BUTTON ============================== //
+                    // ============================================ //
+
+                        setTimeout(() => {
+
+                            shellButtonActual.click()
+
+                            console.log("spawned")
+
+                        }, 100)
+
+            }
 
 
             
@@ -2125,6 +2658,18 @@
                     10
 
                 )
+
+            })
+
+    // EVENTS GHOST CREATION CONTROL ============================== //
+    // ============================================================ //
+
+        // SPAWN NEW GHOST ======================================== //
+        // ======================================================== //
+
+            submissionButtonMainContainer.addEventListener("click", function () {
+
+                ghostFunction()
 
             })
 

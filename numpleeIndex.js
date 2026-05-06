@@ -69,6 +69,23 @@ const open = process.env.takeOpenly
         
         
         
+// SETUP VARIABLES FOR USE ------------------------------------------------------
+// //////////////////////////////////////////////////////////////////////////////
+
+    // CREATE VARIABLES FOR ERRORS ----------------------------------------------
+    // //////////////////////////////////////////////////////////////////////////
+
+    // CREATE VARIABLES FOR NOTIFICATIONS ---------------------------------------
+    // //////////////////////////////////////////////////////////////////////////
+
+        var inputPageNotificationsString = ``
+        var userRegisterPageNotificationsString = ``
+        
+        
+        
+        
+        
+        
         
 // SETUP MONGO DB ---------------------------------------------------------------
 // //////////////////////////////////////////////////////////////////////////////
@@ -85,7 +102,7 @@ const open = process.env.takeOpenly
                 const newlySpawnedUserProfile = {
 
                     spawnedUserStatusIndicator:String,                       // 1
-                    spawnedUsername:String,                                  // 2
+                    spawnedUserName:String,                                  // 2
                     spawnedUserEmail:String,                                 // 3
                     spawnedUserCode:String,                                  // 4
                     spawnedUserinceptionDate:String,                         // 5
@@ -99,7 +116,7 @@ const open = process.env.takeOpenly
                 const newlyActivatedUserProfile = {
 
                     activatedUserStatusIndicator:String,                     // 1
-                    activatedUsername:String,                                // 2
+                    activatedUserName:String,                                // 2
                     activatedUserEmail:String,                               // 3
                     activatedUserCode:String,                                // 4
                     activatedUserinceptionDate:String,                       // 5
@@ -113,7 +130,7 @@ const open = process.env.takeOpenly
                 const newlyReleasedUserProfile = {
 
                     releasedUserStatusIndicator:String,                      // 1
-                    releasedUsername:String,                                 // 2
+                    releasedUserName:String,                                 // 2
                     releasedUserEmail:String,                                // 3
                     releasedUserCode:String,                                 // 4
                     releasedUserinceptionDate:String,                        // 5
@@ -235,6 +252,8 @@ const open = process.env.takeOpenly
 
                     res.render("inputPage", {
 
+                        inputPageNotificationsString
+
                     });
 
             });
@@ -242,14 +261,65 @@ const open = process.env.takeOpenly
         // FOR USER REGISTER PAGE -----------------------------------------------
         // //////////////////////////////////////////////////////////////////////
 
-            app.get("/register", (req, res) => {
+            app.get("/register", async (req, res) => {
 
-                // RENDER INDEX PAGE --------------------------------------------
+                // OPEN CONNECTION ----------------------------------------------
+                // --------------------------------------------------------------
+                        
+                    mongoose.connect(`${open}`)
+
+                // RENDER INDEX PAGE WITH INFO ----------------------------------
                 // --------------------------------------------------------------
 
-                    res.render("userRegisterPage", {
+                    // GET GHOSTS LISTS -----------------------------------------
+                    // ----------------------------------------------------------
 
-                    });
+                        var spawned = {}
+                        var activated = {}
+                        var released = {}
+
+                    // FOR SPAWNED GHOSTS ---------------------------------------
+                    // ----------------------------------------------------------
+
+                        // GET GHOST MEMBER CARDS -------------------------------
+                        // ------------------------------------------------------
+
+                            // ALL SPAWNED GHOSTS -------------------------------
+                            // --------------------------------------------------
+
+                                await spawnedUserProfile.find().then((spGhosts)  => { 
+
+                                    spawned = spGhosts
+
+                                });
+
+                            // ALL ACTIVATED GHOSTS -----------------------------
+                            // --------------------------------------------------
+
+                                await activatedUserProfile.find().then((acGhosts)  => { 
+
+                                    activated = acGhosts
+
+                                });
+
+                            // ALL RELEASED GHOSTS ------------------------------
+                            // --------------------------------------------------
+
+                                await releasedUserProfile.find().then((reGhosts)  => {
+
+                                    // THEN RENDER PAGE WITH GHOST PLASMAS -----
+                                    // -----------------------------------------
+
+                                        res.render("userRegisterPage", { 
+
+                                            spawnedGhostList: spawned,
+                                            activatedGhostList: activated,
+                                            releasedGhostList: reGhosts,
+                                            userRegisterPageNotificationsString
+
+                                        });
+
+                                });
 
             });
 
@@ -329,6 +399,8 @@ const open = process.env.takeOpenly
 
                                         console.log(`${carType}`)
 
+                                        inputPageNotificationsString = `we've already got that one.`
+
 
 
                                     }
@@ -336,6 +408,8 @@ const open = process.env.takeOpenly
                                     else if ( arraysForUse  == null || arraysForUse == undefined) {
 
                                         console.log("not match...")
+
+                                        inputPageNotificationsString = ``
 
                                     }
 
@@ -345,6 +419,8 @@ const open = process.env.takeOpenly
                                         // ======================================
 
                                             createNewEntry()
+
+                                            inputPageNotificationsString = ``
 
                                     }
 
@@ -360,6 +436,8 @@ const open = process.env.takeOpenly
                             // ==================================================
 
                                 createNewEntry()
+
+                                inputPageNotificationsString = ``
 
                             
                         }
@@ -392,7 +470,7 @@ const open = process.env.takeOpenly
                                     // --------------------------------------------------
 
                                         spawnedUserStatusIndicator:"spawned",
-                                        spawnedUsername:req.body.ghostNameIntake,
+                                        spawnedUserName:req.body.ghostNameIntake,
                                         spawnedUserEmail:req.body.ghostEmailIntake,
                                         spawnedUserCode:req.body.ghostCodeIntake,
                                         spawnedUserinceptionDate:req.body.dateIntake,
@@ -426,6 +504,8 @@ const open = process.env.takeOpenly
 
                                         console.log(`${ghostMail}`)
 
+                                        userRegisterPageNotificationsString = `that person is already registered.`
+
 
 
                                     }
@@ -433,6 +513,8 @@ const open = process.env.takeOpenly
                                     else if ( arraysForUse  == null || arraysForUse == undefined) {
 
                                         console.log("ghost not match...")
+
+                                        userRegisterPageNotificationsString = ``
 
                                     }
 
@@ -442,6 +524,8 @@ const open = process.env.takeOpenly
                                         // ======================================
 
                                             createNewGhost()
+
+                                            userRegisterPageNotificationsString = ``
 
                                     }
 
@@ -457,6 +541,8 @@ const open = process.env.takeOpenly
                             // ==================================================
 
                                 createNewGhost()
+
+                                userRegisterPageNotificationsString = ``
 
                             
                         }

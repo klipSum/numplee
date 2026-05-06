@@ -424,6 +424,13 @@
 
                 var submissionButtonActual = document.querySelector(`.intakeScreenSubmissionButtonActual`)
 
+        // NOTIFICATIONS AND ERRORS ELEMENTS GATHER =============== //
+        // ======================================================== //
+
+            var getNotificationsMainContainer = document.querySelector(`.intakeScreenNotificationBoxContainer`)
+
+                var getNotificationsTextBlockActual = document.querySelector(`.notificationsText`)
+
 
 
 
@@ -622,6 +629,95 @@
 
                 var generalOnInlineDisplayMode = `inline-table`
                 var generalOffInlineDisplayMode = `none`
+
+
+
+
+
+
+        // FOR NOTIFICATION AND ERROR HANDLING STYLING ============ //
+        // ======================================================== //
+
+            // FADE IN OUT MAKE LIVE AND KILL STYLES ============== //
+            // ==================================================== //
+
+                // FADE OUT FADE IN STYLES ======================== //
+                // ================================================ //
+
+                    var fadeOutNotificationElement = `
+                    
+                        width:100%;
+                        margin:0px 0px 0px 0px;
+                        display:block;
+                        opacity:0;
+                        padding:10px 0px;
+                        background:#fdaaaa;
+                        border-radius:10px;
+                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                        transition:all 400ms ease;
+                        -o-transition:all 400ms ease;
+                        -ms-transition:all 400ms ease;
+                        -moz-transition:all 400ms ease;
+                        -webkit-transition:all 400ms ease;
+
+                    `
+
+                    var fadeInNotificationElement = `
+                    
+                        width:100%;
+                        margin:30px 0px 0px 0px;
+                        display:block;
+                        opacity:1;
+                        padding:10px 0px;
+                        background:#fdaaaa;
+                        border-radius:10px;
+                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                        transition:all 400ms ease;
+                        -o-transition:all 400ms ease;
+                        -ms-transition:all 400ms ease;
+                        -moz-transition:all 400ms ease;
+                        -webkit-transition:all 400ms ease;
+
+                    `
+
+                // MAKE LIVE KILL ELEMENT STYLES ================== //
+                // ================================================ //
+
+                    var killNotificationElement = `
+                    
+                        width:100%;
+                        margin:0px 0px 0px 0px;
+                        display:none;
+                        opacity:0;
+                        padding:10px 0px;
+                        background:#fdaaaa;
+                        border-radius:10px;
+                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                        transition:all 400ms ease;
+                        -o-transition:all 400ms ease;
+                        -ms-transition:all 400ms ease;
+                        -moz-transition:all 400ms ease;
+                        -webkit-transition:all 400ms ease;
+
+                    `
+
+                    var makeLiveNotificationElement = `
+                    
+                        width:100%;
+                        margin:0px 0px 0px 0px;
+                        display:block;
+                        opacity:0;
+                        padding:10px 0px;
+                        background:#fdaaaa;
+                        border-radius:10px;
+                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                        transition:all 400ms ease;
+                        -o-transition:all 400ms ease;
+                        -ms-transition:all 400ms ease;
+                        -moz-transition:all 400ms ease;
+                        -webkit-transition:all 400ms ease;
+
+                    `
 
 
 
@@ -2340,6 +2436,94 @@
             }
 
 
+            
+
+        // FOR NOTIFICATIONS AND ERROR HANDLING FUNCTIONS ========= //
+        // ======================================================== //
+
+            function notificationsAndErrorsHandlingFunction () {
+
+                // CHECK IF NOTIFICATION OR ERROR STRING EXISTS OR NOT //
+                // =================================================== //
+
+                    // IF DOES NOT EXIST THEN KEEP POP UP HIDDEN ===== //
+                    // =============================================== //
+
+                        if ( getNotificationsTextBlockActual.value == "" || getNotificationsTextBlockActual.value == `` ) {
+
+                            console.log("NO NOTIFICATION...")
+
+                        }
+
+                    // IF EXISTS THEN BRING UP POP UP ================ //
+                    // =============================================== //
+
+                        else {
+
+                            console.log("PULLING UP NOTIFICATION...")
+
+                            // PULL UP NOTIFICATON MODE ============== //
+                            // ======================================= //
+
+                                // MAKE POP UP LIVE ================== //
+                                // =================================== //
+
+                                    getNotificationsMainContainer.style = `
+                                    
+                                        ${makeLiveNotificationElement}
+
+                                    `
+
+                                        // THEN FADE IN POP UP ======= //
+                                        // =========================== //
+
+                                            setTimeout(() => {
+
+                                                getNotificationsMainContainer.style = `
+                                    
+                                                    ${fadeInNotificationElement}
+
+                                                `
+
+                                            }, 50)
+
+
+                            // THEN LATER, HIDE NOTIFICATION MODE ==== //
+                            // ======================================= //
+
+                                setTimeout(() => {
+
+                                    
+                                    // FADE OUT POP UP =============== //
+                                    // =============================== //
+
+                                        getNotificationsMainContainer.style = `
+                                    
+                                            ${fadeOutNotificationElement}
+
+                                        `
+
+                                            // THEN KILL POP UP ====== //
+                                            // ======================= //
+
+                                                setTimeout(() => {
+
+                                                    getNotificationsMainContainer.style = `
+                                        
+                                                        ${killNotificationElement}
+
+                                                    `
+
+                                                }, 300)
+
+
+                                }, 2000)
+
+                        }
+
+            }
+
+
 
 
 
@@ -2471,6 +2655,11 @@
     // ============================================================ //
 
         plateNumberInputField.focus()
+
+    // NOTIFICATION AND ERROR HANDLING ============================ //
+    // ============================================================ //
+
+        notificationsAndErrorsHandlingFunction()
 
     // CHECK CLICKED ON ELEMENT =================================== //
     // ============================================================ //

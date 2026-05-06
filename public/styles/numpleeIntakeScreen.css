@@ -1569,3 +1569,98 @@
                                 -webkit-transition:all 400ms ease;
 
                             }
+
+
+
+
+                    
+
+                        /* NOTIFICATIONS AND ERROS CONTAINER ========== */
+                        /* ============================================ */
+
+                            /* NOTIFICATIONS BLOCK CONTAINER ========== */
+                            /* ======================================== */
+
+                                .intakeScreenNotificationBoxContainer{
+
+                                    width:100%;
+                                    margin:0px 0px 0px 0px;
+                                    display:none;
+                                    opacity:0;
+                                    padding:10px 0px;
+                                    background:#fdaaaa;
+                                    border-radius:10px;
+                                    box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                                    transition:all 400ms ease;
+                                    -o-transition:all 400ms ease;
+                                    -ms-transition:all 400ms ease;
+                                    -moz-transition:all 400ms ease;
+                                    -webkit-transition:all 400ms ease;
+
+                                }
+
+                                    .intakeScreenNotificationBoxContentResizer{
+
+                                        width:80%;
+                                        left:0;
+                                        right:0;
+                                        margin:0px auto;
+                                        position:relative;
+                                        transition:all 400ms ease;
+                                        -o-transition:all 400ms ease;
+                                        -ms-transition:all 400ms ease;
+                                        -moz-transition:all 400ms ease;
+                                        -webkit-transition:all 400ms ease;
+
+                                    }
+
+                                        /* BODY TEXT CONTAINER  ======= */
+                                        /* ============================ */
+
+                                            .intakeScreenNotificationBoxBodyContainer{
+
+                                                width:100%;
+                                                position:relative;
+                                                transition:all 400ms ease;
+                                                -o-transition:all 400ms ease;
+                                                -ms-transition:all 400ms ease;
+                                                -moz-transition:all 400ms ease;
+                                                -webkit-transition:all 400ms ease;
+
+                                            }
+
+                                                .intakeScreenNotificationBoxBodyElement{
+
+                                                    width:100%;
+                                                    z-index:2;
+                                                    padding:10px 0px;
+                                                    position:relative;
+                                                    border-radius:8px;
+                                                    transition:all 400ms ease;
+                                                    -o-transition:all 400ms ease;
+                                                    -ms-transition:all 400ms ease;
+                                                    -moz-transition:all 400ms ease;
+                                                    -webkit-transition:all 400ms ease;
+
+                                                }
+
+                                                    .notificationsText{
+
+                                                        width:90%;
+                                                        cursor:default;
+                                                        color:#2c2c2c;
+                                                        border:0px solid rgba(0, 0, 0, 0);
+                                                        outline:none;
+                                                        padding:10px 0px;
+                                                        position:relative;
+                                                        font-size:15px;
+                                                        text-align:center;
+                                                        background:rgba(0, 0, 0, 0);
+                                                        letter-spacing:1px;
+                                                        transition:all 400ms ease;
+                                                        -o-transition:all 400ms ease;
+                                                        -ms-transition:all 400ms ease;
+                                                        -moz-transition:all 400ms ease;
+                                                        -webkit-transition:all 400ms ease;
+
+                                                    }

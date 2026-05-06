@@ -185,6 +185,181 @@
 
             
 
+            <!-- RECALL ============================================================== -->
+            <!-- ===================================================================== -->
+
+                <div class="recallMainContainer">
+
+                    <!-- SPAWNED RECALLS ============================================= -->
+                    <!-- ============================================================= -->
+
+                        <div class="recallSpawnsMainCardsContainer">
+
+
+
+
+                            <%spawnedGhostList.forEach(spawnedGhost => {%>
+
+                            <!-- SPAWNED CARD CONTAINER ============================== -->
+                            <!-- ===================================================== -->
+
+                                <div class="recalledSpawnedContentCardContainer">
+
+                                    <div class="recalledSpawnedContentCardElement">
+
+                                        <div class="recalledSpawnedContentCardContentResizer">
+
+                                            <!-- PENDING INDICATOR CONTAINER ============= -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentIndicatorContainer">
+
+                                                    <div class="recalledSpawnedContentIndicatorElementContainer">
+
+                                                        <div class="recalledSpawnedContentIndicatorElementTextActual">
+
+                                                            <%=spawnedGhost.spawnedUserStatusIndicator%>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            <!-- USER NAME CONTAINER ===================== -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentUserNameContainer">
+
+                                                    <div class="recalledSpawnedContentUserNameElement">
+
+                                                        <div class="recalledSpawnedContentUserNameTextActual">
+
+                                                            <%=spawnedGhost.spawnedUserName%>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            <!-- USER EMAIL CONTAINER ==================== -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentUserEmailContainer">
+
+                                                    <div class="recalledSpawnedContentUserEmailElement">
+
+                                                        <div class="recalledSpawnedContentUserEmailTextActual">
+
+                                                            <%=spawnedGhost.spawnedUserEmail%>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            <!-- USER ENTRY CONTAINER ==================== -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentUserEntryContainer">
+
+                                                    <div class="recalledSpawnedContentUserEntryElement">
+
+                                                        <div class="recalledSpawnedContentUserEntryTextActual">
+
+                                                            <%=spawnedGhost.spawnedUserCode%>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            <!-- USER REVIEW BUTTON CONTAINER ============ -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentUserReviewButtonContainer">
+
+                                                    <div class="recalledSpawnedContentUserReviewButtonTextActual">
+
+                                                        review user
+
+                                                    </div>
+
+                                                </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            <%})%>
+
+
+                            
+
+                        </div>
+
+                    <!-- ACTIVE RECALLS ============================================== -->
+                    <!-- ============================================================= -->
+
+                        <div class="recallActivatesMainCardsContainer">
+                        </div>
+
+                    <!-- RELEASED RECALLS ============================================ -->
+                    <!-- ============================================================= -->
+
+                        <div class="recallReleasesMainCardsContainer">
+                        </div>
+
+                </div>
+
+
+            
+
+            <!-- NOTIFICATIONS AND ERROS CONTAINER ======================= -->
+            <!-- ========================================================= -->
+
+                <!-- NOTIFICATIONS BLOCK CONTAINER ======================= -->
+                <!-- ===================================================== -->
+
+                    <div class="userRegisterScreenNotificationBoxContainer">
+
+                        <div class="userRegisterScreenNotificationBoxContentResizer">
+
+                            
+                            <!-- BODY TEXT CONTAINER ===================== -->
+                            <!-- ========================================= -->
+
+                                <div class="userRegisterScreenNotificationBoxBodyContainer">
+
+                                    <div class="userRegisterScreenNotificationBoxBodyElement">
+
+                                        <input
+                                        
+                                            name="notificationsText"
+                                            class="notificationsText"
+                                            type="text"
+                                            value="<%=userRegisterPageNotificationsString%>"
+                                            readonly
+
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                        </div>
+
+                    </div>
+
+
+            
+
             <!-- GHOSTS ============================================================== -->
             <!-- ===================================================================== -->
 
@@ -269,29 +444,6 @@
                             <!-- ===================================================== -->
                             
                                 <div class="spawnedGhostContentCardsContainer">
-
-                                    <!-- GHOST CONTENT CARD ONE CONTAINER ============ -->
-                                    <!-- ============================================= -->
-
-                                        <div class="spanwedGhostContentCardOneContainer">
-
-                                            <div class="spanwedGhostContentCardOneContentResizer">
-
-                                                <!-- PENDING INDICATOR CONTAINER ===== -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER NAME CONTAINER ============= -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER EMAIL CONTAINER ============ -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER EMAIL CONTAINER ============ -->
-                                                <!-- ================================= -->
-
-                                            </div>
-
-                                        </div>
 
                                 </div>
 
@@ -392,29 +544,6 @@
                             
                                 <div class="activeGhostContentCardsContainer">
 
-                                    <!-- GHOST CONTENT CARD ONE CONTAINER ============ -->
-                                    <!-- ============================================= -->
-
-                                        <div class="activeGhostContentCardOneContainer">
-
-                                            <div class="activeGhostContentCardOneContentResizer">
-
-                                                <!-- PENDING INDICATOR CONTAINER ===== -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER NAME CONTAINER ============= -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER EMAIL CONTAINER ============ -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER EMAIL CONTAINER ============ -->
-                                                <!-- ================================= -->
-
-                                            </div>
-
-                                        </div>
-
                                 </div>
 
 
@@ -513,29 +642,6 @@
                             <!-- ===================================================== -->
                             
                                 <div class="releasedGhostContentCardsContainer">
-
-                                    <!-- GHOST CONTENT CARD ONE CONTAINER ============ -->
-                                    <!-- ============================================= -->
-
-                                        <div class="releasedGhostContentCardOneContainer">
-
-                                            <div class="releasedGhostContentCardOneContentResizer">
-
-                                                <!-- PENDING INDICATOR CONTAINER ===== -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER NAME CONTAINER ============= -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER EMAIL CONTAINER ============ -->
-                                                <!-- ================================= -->
-
-                                                <!-- USER EMAIL CONTAINER ============ -->
-                                                <!-- ================================= -->
-
-                                            </div>
-
-                                        </div>
 
                                 </div>
 

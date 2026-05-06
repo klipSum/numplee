@@ -27,7 +27,7 @@
             left:0;
             right:0;
             bottom:0;
-            margin:auto;
+            margin:0px auto;
             padding:0px 0px;
             position:absolute;
             transition:all 400ms ease;
@@ -628,8 +628,7 @@
                                                 opacity:0;
                                                 margin:0px 0px 0px 0px;
                                                 display:none;
-                                                padding:30px 0px;
-                                                background:#2c2c2c;
+                                                padding:0px 0px;
                                                 transition:all 400ms ease;
                                                 -o-transition:all 400ms ease;
                                                 -ms-transition:all 400ms ease;
@@ -1188,3 +1187,452 @@
                                 -webkit-transition:all 400ms ease;
 
                             }
+
+
+
+
+
+
+                    
+
+                        /* RECALL ===================================== */
+                        /* ============================================ */
+
+                            .recallMainContainer{
+
+                                width:80%;
+                                margin:0px auto 0px auto;
+                                display:none;
+                                transition:all 400ms ease;
+                                -o-transition:all 400ms ease;
+                                -ms-transition:all 400ms ease;
+                                -moz-transition:all 400ms ease;
+                                -webkit-transition:all 400ms ease;
+
+                            }
+
+                                /* SPAWNED RECALLS ==================== */
+                                /* ==================================== */
+
+                                    .recallSpawnsMainCardsContainer{
+
+                                        width:100%;
+                                        display:inline-table;
+                                        position:relative;
+                                        transition:all 400ms ease;
+                                        -o-transition:all 400ms ease;
+                                        -ms-transition:all 400ms ease;
+                                        -moz-transition:all 400ms ease;
+                                        -webkit-transition:all 400ms ease;
+
+                                    }
+
+                                        /* SPAWNED CARD CONTAINER ===== */
+                                        /* ============================ */
+
+                                            .recalledSpawnedContentCardContainer{
+
+                                                width:100%;
+                                                margin:20px 0px 0px 0px;
+                                                position:relative;
+                                                transition:all 400ms ease;
+                                                -o-transition:all 400ms ease;
+                                                -ms-transition:all 400ms ease;
+                                                -moz-transition:all 400ms ease;
+                                                -webkit-transition:all 400ms ease;
+
+                                            }
+
+                                                .recalledSpawnedContentCardElement{
+
+                                                    width:100%;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:0px auto;
+                                                    padding:15px 0px;
+                                                    background:#FFFFFF;
+                                                    box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                                                    border-radius:10px;
+                                                    transition:all 400ms ease;
+                                                    -o-transition:all 400ms ease;
+                                                    -ms-transition:all 400ms ease;
+                                                    -moz-transition:all 400ms ease;
+                                                    -webkit-transition:all 400ms ease;
+
+                                                }
+
+                                                    .recalledSpawnedContentCardContentResizer{
+
+                                                        width:85%;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:0px auto;
+                                                        display:block;
+                                                        position:relative;
+                                                        transition:all 400ms ease;
+                                                        -o-transition:all 400ms ease;
+                                                        -ms-transition:all 400ms ease;
+                                                        -moz-transition:all 400ms ease;
+                                                        -webkit-transition:all 400ms ease;
+
+                                                    }
+                                                    
+                                                        /* PENDING INDICATOR CONTAINER */
+                                                        /* =========================== */
+
+                                                            .recalledSpawnedContentIndicatorContainer{
+
+                                                                width:100%;
+                                                                transition:all 400ms ease;
+                                                                -o-transition:all 400ms ease;
+                                                                -ms-transition:all 400ms ease;
+                                                                -moz-transition:all 400ms ease;
+                                                                -webkit-transition:all 400ms ease;
+
+                                                            }
+
+                                                                .recalledSpawnedContentIndicatorElementContainer{
+
+                                                                    width:max-content;
+                                                                    padding:5px 10px;
+                                                                    background:#C4E7D3;
+                                                                    border-radius:5px;
+                                                                    transition:all 400ms ease;
+                                                                    -o-transition:all 400ms ease;
+                                                                    -ms-transition:all 400ms ease;
+                                                                    -moz-transition:all 400ms ease;
+                                                                    -webkit-transition:all 400ms ease;
+
+                                                                }
+
+                                                                    .recalledSpawnedContentIndicatorElementTextActual{
+
+                                                                        width:100%;
+                                                                        transition:all 400ms ease;
+                                                                        -o-transition:all 400ms ease;
+                                                                        -ms-transition:all 400ms ease;
+                                                                        -moz-transition:all 400ms ease;
+                                                                        -webkit-transition:all 400ms ease;
+
+                                                                    }
+                                                    
+                                                        /* USER NAME CONTAINER ======= */
+                                                        /* =========================== */
+
+                                                            .recalledSpawnedContentUserNameContainer{
+
+                                                                width:100%;
+                                                                margin:10px 0px 0px 0px;
+                                                                transition:all 400ms ease;
+                                                                -o-transition:all 400ms ease;
+                                                                -ms-transition:all 400ms ease;
+                                                                -moz-transition:all 400ms ease;
+                                                                -webkit-transition:all 400ms ease;
+
+                                                            }
+
+                                                                .recalledSpawnedContentUserNameElement{
+
+                                                                    width:100%;
+                                                                    padding:15px 0px;
+                                                                    background:#F3F5F4;
+                                                                    box-shadow:0px 20px 30px -10px rgba(0,0,0,0.3);
+                                                                    border-radius:10px;
+                                                                    transition:all 400ms ease;
+                                                                    -o-transition:all 400ms ease;
+                                                                    -ms-transition:all 400ms ease;
+                                                                    -moz-transition:all 400ms ease;
+                                                                    -webkit-transition:all 400ms ease;
+
+                                                                }
+
+                                                                    .recalledSpawnedContentUserNameTextActual{
+
+                                                                        width:80%;
+                                                                        top:0;
+                                                                        left:0;
+                                                                        right:0;
+                                                                        bottom:0;
+                                                                        margin:0px auto;
+                                                                        display:block;
+                                                                        text-align:left;
+                                                                        transition:all 400ms ease;
+                                                                        -o-transition:all 400ms ease;
+                                                                        -ms-transition:all 400ms ease;
+                                                                        -moz-transition:all 400ms ease;
+                                                                        -webkit-transition:all 400ms ease;
+
+                                                                    }
+                                                    
+                                                        /* USER EMAIL CONTAINER ====== */
+                                                        /* =========================== */
+
+                                                            .recalledSpawnedContentUserEmailContainer{
+
+                                                                width:100%;
+                                                                margin:10px 0px 0px 0px;
+                                                                transition:all 400ms ease;
+                                                                -o-transition:all 400ms ease;
+                                                                -ms-transition:all 400ms ease;
+                                                                -moz-transition:all 400ms ease;
+                                                                -webkit-transition:all 400ms ease;
+
+                                                            }
+
+                                                                .recalledSpawnedContentUserEmailElement{
+
+                                                                    width:100%;
+                                                                    padding:15px 0px;
+                                                                    background:#F3F5F4;
+                                                                    box-shadow:0px 20px 30px -10px rgba(0,0,0,0.3);
+                                                                    border-radius:10px;
+                                                                    transition:all 400ms ease;
+                                                                    -o-transition:all 400ms ease;
+                                                                    -ms-transition:all 400ms ease;
+                                                                    -moz-transition:all 400ms ease;
+                                                                    -webkit-transition:all 400ms ease;
+
+                                                                }
+
+                                                                    .recalledSpawnedContentUserEmailTextActual{
+
+                                                                        width:80%;
+                                                                        top:0;
+                                                                        left:0;
+                                                                        right:0;
+                                                                        bottom:0;
+                                                                        margin:0px auto;
+                                                                        display:block;
+                                                                        text-align:left;
+                                                                        transition:all 400ms ease;
+                                                                        -o-transition:all 400ms ease;
+                                                                        -ms-transition:all 400ms ease;
+                                                                        -moz-transition:all 400ms ease;
+                                                                        -webkit-transition:all 400ms ease;
+
+                                                                    }
+                                                    
+                                                        /* USER ENTRY CONTAINER ====== */
+                                                        /* =========================== */
+
+                                                            .recalledSpawnedContentUserEntryContainer{
+
+                                                                width:100%;
+                                                                display:block;
+                                                                margin:10px 0px 0px 0px;
+                                                                transition:all 400ms ease;
+                                                                -o-transition:all 400ms ease;
+                                                                -ms-transition:all 400ms ease;
+                                                                -moz-transition:all 400ms ease;
+                                                                -webkit-transition:all 400ms ease;
+
+                                                            }
+
+                                                                .recalledSpawnedContentUserEntryElement{
+
+                                                                    width:100%;
+                                                                    padding:15px 0px;
+                                                                    background:#F3F5F4;
+                                                                    box-shadow:0px 20px 30px -10px rgba(0,0,0,0.3);
+                                                                    border-radius:10px;
+                                                                    transition:all 400ms ease;
+                                                                    -o-transition:all 400ms ease;
+                                                                    -ms-transition:all 400ms ease;
+                                                                    -moz-transition:all 400ms ease;
+                                                                    -webkit-transition:all 400ms ease;
+
+                                                                }
+
+                                                                    .recalledSpawnedContentUserEntryTextActual{
+
+                                                                        width:80%;
+                                                                        top:0;
+                                                                        left:0;
+                                                                        right:0;
+                                                                        bottom:0;
+                                                                        margin:0px auto;
+                                                                        display:block;
+                                                                        text-align:left;
+                                                                        transition:all 400ms ease;
+                                                                        -o-transition:all 400ms ease;
+                                                                        -ms-transition:all 400ms ease;
+                                                                        -moz-transition:all 400ms ease;
+                                                                        -webkit-transition:all 400ms ease;
+
+                                                                    }
+
+                                                        /* USER REVIEW BUTTON CONTAINER */
+                                                        /* ============================ */
+
+                                                            .recalledSpawnedContentUserReviewButtonContainer{
+
+                                                                width:100%;
+                                                                height:58px;
+                                                                margin:10px 0px 0px 0px;
+                                                                opacity:1;
+                                                                display:block;
+                                                                position:relative;
+                                                                transition:all 400ms ease;
+                                                                -o-transition:all 400ms ease;
+                                                                -ms-transition:all 400ms ease;
+                                                                -moz-transition:all 400ms ease;
+                                                                -webkit-transition:all 400ms ease;
+
+                                                            }
+
+                                                                .recalledSpawnedContentUserReviewButtonTextActual{
+
+                                                                    width:100%;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    color:#FFFFFF;
+                                                                    cursor:pointer;
+                                                                    margin:0px auto;
+                                                                    border:0px solid rgba(0,0,0,0);
+                                                                    z-index:0;
+                                                                    outline:none;
+                                                                    display:block;
+                                                                    padding:20px 0px;
+                                                                    position:absolute;
+                                                                    font-size:15px;
+                                                                    background:#34694F;
+                                                                    box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                                                                    border-radius:8px;
+                                                                    transition:all 400ms ease;
+                                                                    -o-transition:all 400ms ease;
+                                                                    -ms-transition:all 400ms ease;
+                                                                    -moz-transition:all 400ms ease;
+                                                                    -webkit-transition:all 400ms ease;
+
+                                                                }
+
+                                /* ACTIVATED RECALLS ================== */
+                                /* ==================================== */
+
+                                    .recallActivatesMainCardsContainer{
+
+                                        width:100%;
+                                        display:inline-table;
+                                        position:relative;
+                                        transition:all 400ms ease;
+                                        -o-transition:all 400ms ease;
+                                        -ms-transition:all 400ms ease;
+                                        -moz-transition:all 400ms ease;
+                                        -webkit-transition:all 400ms ease;
+
+                                    }
+
+                                /* RELEASED RECALLS =================== */
+                                /* ==================================== */
+
+                                    .recallReleasesMainCardsContainer{
+
+                                        width:100%;
+                                        display:inline-table;
+                                        position:relative;
+                                        transition:all 400ms ease;
+                                        -o-transition:all 400ms ease;
+                                        -ms-transition:all 400ms ease;
+                                        -moz-transition:all 400ms ease;
+                                        -webkit-transition:all 400ms ease;
+
+                                    }
+
+
+
+
+                    
+
+                        /* NOTIFICATIONS AND ERROS CONTAINER ========== */
+                        /* ============================================ */
+
+                            /* NOTIFICATIONS BLOCK CONTAINER ========== */
+                            /* ======================================== */
+
+                                .userRegisterScreenNotificationBoxContainer{
+
+                                    width:100%;
+                                    margin:0px 0px 0px 0px;
+                                    display:none;
+                                    opacity:0;
+                                    padding:10px 0px;
+                                    background:#fdaaaa;
+                                    border-radius:10px;
+                                    box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                                    transition:all 400ms ease;
+                                    -o-transition:all 400ms ease;
+                                    -ms-transition:all 400ms ease;
+                                    -moz-transition:all 400ms ease;
+                                    -webkit-transition:all 400ms ease;
+
+                                }
+
+                                    .userRegisterScreenNotificationBoxContentResizer{
+
+                                        width:80%;
+                                        left:0;
+                                        right:0;
+                                        margin:0px auto;
+                                        position:relative;
+                                        transition:all 400ms ease;
+                                        -o-transition:all 400ms ease;
+                                        -ms-transition:all 400ms ease;
+                                        -moz-transition:all 400ms ease;
+                                        -webkit-transition:all 400ms ease;
+
+                                    }
+
+                                        /* BODY TEXT CONTAINER  ======= */
+                                        /* ============================ */
+
+                                            .userRegisterScreenNotificationBoxBodyContainer{
+
+                                                width:100%;
+                                                position:relative;
+                                                transition:all 400ms ease;
+                                                -o-transition:all 400ms ease;
+                                                -ms-transition:all 400ms ease;
+                                                -moz-transition:all 400ms ease;
+                                                -webkit-transition:all 400ms ease;
+
+                                            }
+
+                                                .userRegisterScreenNotificationBoxBodyElement{
+
+                                                    width:100%;
+                                                    z-index:2;
+                                                    padding:10px 0px;
+                                                    position:relative;
+                                                    border-radius:8px;
+                                                    transition:all 400ms ease;
+                                                    -o-transition:all 400ms ease;
+                                                    -ms-transition:all 400ms ease;
+                                                    -moz-transition:all 400ms ease;
+                                                    -webkit-transition:all 400ms ease;
+
+                                                }
+
+                                                    .notificationsText{
+
+                                                        width:90%;
+                                                        cursor:default;
+                                                        color:#2c2c2c;
+                                                        border:0px solid rgba(0, 0, 0, 0);
+                                                        outline:none;
+                                                        padding:10px 0px;
+                                                        position:relative;
+                                                        font-size:15px;
+                                                        text-align:center;
+                                                        background:rgba(0, 0, 0, 0);
+                                                        letter-spacing:1px;
+                                                        transition:all 400ms ease;
+                                                        -o-transition:all 400ms ease;
+                                                        -ms-transition:all 400ms ease;
+                                                        -moz-transition:all 400ms ease;
+                                                        -webkit-transition:all 400ms ease;
+
+                                                    }

@@ -30,6 +30,13 @@
 
             ]
 
+        var classNumbersLimited = [
+
+                "One", "Two", "Three", "Four", "Five", 
+                "Six", "Seven", "Eight", "Nine", "Ten"
+
+            ]
+
     // LETTER MAPPERS ============================================= //
     // ============================================================ //
 
@@ -55,11 +62,31 @@
             "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
             "Y", "Z",
 
-            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
-
-            "=", "-", "#", "^", "&", "*", "<", ">", "+", "~"
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
 
         ]
+
+        var fusionMaps = [
+
+            "||--", "__{;", "*&~~", "/?|+", "+^^/", "><>?|", "???+", "|!@~", "@_@+", "&&&$",
+
+            "%%$<?", "::<!", "}{[}", "{[}]", "|:><@", "^!!~", "`~@/", "|||;", "&%~;", "*!~+!",
+            
+            ">>>^", "^(*/", "??::", "::;:", ":***", "*~``", "%%%:", "%()_", "____", "__!`",
+            
+            "```#", "#@@.", "...<", "::|_", "|-__", "///?", "//**", "*#@@", "&^^^", "($##",
+            
+            "**|*", "^#~`", "<|/?", "><<>", "<<>>", "''``", "${{}", "*()*", "*^^*", ">**<",
+            
+            "&??>", "/[]_", "[(!!", "!|!|", "|**|", "?_--", "*~_%", "^^..", "??*@", "^^^%"
+
+        ]
+
+    // MASH POTATOES ============================================== //
+    // ============================================================ //
+        
+        var bowlChips = []
+        var bowlCompile = ``
 
     // FOR NAV BAR CONTROLS ======================================= //
     // ============================================================ //
@@ -772,8 +799,11 @@
                                         left:0;
                                         right:0;
                                         bottom:0;
+                                        cursor:default;
                                         margin:0px auto;
+                                        opacity:0;
                                         display:block;
+                                        overflow:hidden;
                                         text-align:left;
                                         transition:all 400ms ease;
                                         -o-transition:all 400ms ease;
@@ -782,6 +812,116 @@
                                         -webkit-transition:all 400ms ease;
 
                                     `
+
+                                    var resposibleRecycledFieldAlttextActualStyles = `
+                                    
+                                        width:80%;
+                                        top:0;
+                                        left:0;
+                                        right:0;
+                                        bottom:0;
+                                        cursor:default;
+                                        margin:0px auto;
+                                        opacity:1;
+                                        display:block;
+                                        overflow:hidden;
+                                        text-align:left;
+                                        transition:all 400ms ease;
+                                        -o-transition:all 400ms ease;
+                                        -ms-transition:all 400ms ease;
+                                        -moz-transition:all 400ms ease;
+                                        -webkit-transition:all 400ms ease;
+
+                                    `
+
+
+
+
+
+
+        // FOR NOTIFICATION AND ERROR HANDLING STYLING ============ //
+        // ======================================================== //
+
+            // FADE IN OUT MAKE LIVE AND KILL STYLES ============== //
+            // ==================================================== //
+
+                // FADE OUT FADE IN STYLES ======================== //
+                // ================================================ //
+
+                    var fadeOutNotificationElement = `
+                    
+                        width:100%;
+                        margin:0px 0px 0px 0px;
+                        display:block;
+                        opacity:0;
+                        padding:10px 0px;
+                        background:#fdaaaa;
+                        border-radius:10px;
+                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                        transition:all 400ms ease;
+                        -o-transition:all 400ms ease;
+                        -ms-transition:all 400ms ease;
+                        -moz-transition:all 400ms ease;
+                        -webkit-transition:all 400ms ease;
+
+                    `
+
+                    var fadeInNotificationElement = `
+                    
+                        width:100%;
+                        margin:30px 0px 0px 0px;
+                        display:block;
+                        opacity:1;
+                        padding:10px 0px;
+                        background:#fdaaaa;
+                        border-radius:10px;
+                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                        transition:all 400ms ease;
+                        -o-transition:all 400ms ease;
+                        -ms-transition:all 400ms ease;
+                        -moz-transition:all 400ms ease;
+                        -webkit-transition:all 400ms ease;
+
+                    `
+
+                // MAKE LIVE KILL ELEMENT STYLES ================== //
+                // ================================================ //
+
+                    var killNotificationElement = `
+                    
+                        width:100%;
+                        margin:0px 0px 0px 0px;
+                        display:none;
+                        opacity:0;
+                        padding:10px 0px;
+                        background:#fdaaaa;
+                        border-radius:10px;
+                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                        transition:all 400ms ease;
+                        -o-transition:all 400ms ease;
+                        -ms-transition:all 400ms ease;
+                        -moz-transition:all 400ms ease;
+                        -webkit-transition:all 400ms ease;
+
+                    `
+
+                    var makeLiveNotificationElement = `
+                    
+                        width:100%;
+                        margin:0px 0px 0px 0px;
+                        display:block;
+                        opacity:0;
+                        padding:10px 0px;
+                        background:#fdaaaa;
+                        border-radius:10px;
+                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
+                        transition:all 400ms ease;
+                        -o-transition:all 400ms ease;
+                        -ms-transition:all 400ms ease;
+                        -moz-transition:all 400ms ease;
+                        -webkit-transition:all 400ms ease;
+
+                    `
 
 
 
@@ -796,6 +936,8 @@
             var userNameHold = "---"
             var emailHold = "---"
             var specCodeHold = "---"
+
+                var specDoorUpHold = "---"
 
 
 
@@ -830,6 +972,13 @@
             var submissionButtonMainContainer = document.querySelector(`.userRegisterSubmissionButtonContainer`)
 
                 var submissionButtonActual = document.querySelector(`.userRegisterSubmissionButtonActual`)
+
+        // NOTIFICATIONS AND ERRORS ELEMENTS GATHER =============== //
+        // ======================================================== //
+
+            var getNotificationsMainContainer = document.querySelector(`.intakeScreenNotificationBoxContainer`)
+
+                var getNotificationsTextBlockActual = document.querySelector(`.notificationsText`)
 
 
 
@@ -913,38 +1062,6 @@
         // ======================================================== //
 
             var getGhost = document.querySelector(`.subzeroControlContainer`)
-
-
-
-
-
-
-    // FOR RESPONSIBLE RECYCLING ================================== //
-    // ============================================================ //
-
-        // FOR SPAWNED RESPONSIBLE RECYCLING ====================== //
-        // ======================================================== //
-
-            // CATCH SPAWNED SOULS ================================ //
-            // ==================================================== //
-
-                var getRecyclingSpawnBin = document.querySelector(`.recallSpawnsMainCardsContainer`)
-
-                    var getRecyclingSpawnBinCount = getRecyclingSpawnBin.children.length
-
-            // CATCH ACTIVATED SOULS ============================== //
-            // ==================================================== //
-
-                var getRecyclingActivatedBin = document.querySelector(`.recallActivatesMainCardsContainer`)
-
-                    var getRecyclingActivatedBinCount = getRecyclingActivatedBin.children.length
-
-            // CATCH RELEASED SOULS =============================== //
-            // ==================================================== //
-
-                var getRecyclingReleasedBin = document.querySelector(`.recallReleasesMainCardsContainer`)
-
-                    var getRecyclingReleasedBinCount = getRecyclingReleasedBin.children.length
 
 
 
@@ -1730,14 +1847,54 @@
 
                                     var ghostLightSelect = ghostLightCreate[Math.floor(Math.random()*ghostLightCreate.length)];
 
-                                for ( generateCount = 0; generateCount < ghostLightSelect; generateCount++ ) {
+                            // CLEAR STRINGS TO EMPTY FIRST ======= //
+                            // ==================================== //
 
-                                    // PICK PLASMA AND CREATE GHOST //
-                                    // ============================ //
+                                specCodeHold = ``
+                                specDoorUpHold = ``
 
-                                        specCodeHold += `${plasmaMaps[Math.floor(Math.random()*plasmaMaps.length)]}`
+                            // RUN MAPPER LOOP ==================== //
+                            // ==================================== //
 
-                                }
+
+                                // CHECK IF POPULATED ALREADY = //
+                                // ============================ //
+
+                                    // IF ALREADY POPULATED === //
+                                    // ======================== //
+
+                                        if ( specCodeHold == `` || specDoorUpHold == ``) {
+
+                                            for ( generateCount = 0; generateCount < ghostLightSelect; generateCount++ ) {
+
+                                                // PICK PLASMA AND CREATE GHOST //
+                                                // ============================ //
+
+                                                    var getRandomLetterForUse = `${plasmaMaps[Math.floor(Math.random()*plasmaMaps.length)]}`
+
+                                                    specCodeHold += `${getRandomLetterForUse}`
+
+                                                    // FIND INDEX LETTER IN STRING  //
+                                                    // ============================ //
+
+                                                        var getIndexOfChosenLetter = `${plasmaMaps.indexOf(getRandomLetterForUse)}`
+
+                                                            specDoorUpHold += `${fusionMaps[getIndexOfChosenLetter]}`
+
+                                                                console.log("MAPPED: " + specDoorUpHold)
+
+                                            }
+
+                                        }
+
+                                    // IF NOT YET POPULATED === //
+                                    // ======================== //
+
+                                        else {
+
+
+
+                                        }
 
                                     // UPDATE GHOST FIELD ========= //
                                     // ============================ //
@@ -2279,7 +2436,7 @@
                                 // SHELL CODE ===================== //
                                 // ================================ //
 
-                                    shellCodeInput.value = `${String(userCodeInputField.value).toUpperCase()}`
+                                    shellCodeInput.value = `${String(specDoorUpHold.replaceAll(" ","")).toUpperCase()}`
 
                                 // SHELL DATE ===================== //
                                 // ================================ //
@@ -2371,65 +2528,90 @@
             }
 
 
+            
 
-
-
-
-    // FUNCTIONS FOR MASHED POTATOES CONTROL ====================== //
-    // ============================================================ //
-
-        // POTATO MASH CREATION FUNCTION ========================== //
+        // FOR NOTIFICATIONS AND ERROR HANDLING FUNCTIONS ========= //
         // ======================================================== //
 
-            function mashedPotatoesFunction () {
+            function notificationsAndErrorsHandlingFunction () {
 
-                // GET POTATO ===================================== //
-                // ================================================ //
+                // CHECK IF NOTIFICATION OR ERROR STRING EXISTS OR NOT //
+                // =================================================== //
 
-                    var getPotato = document.querySelector(`.recalledSpawnedContentCardOneContentResizer`).children[3].children[0].children[0].innerHTML
+                    // IF DOES NOT EXIST THEN KEEP POP UP HIDDEN ===== //
+                    // =============================================== //
 
-                // PEEL WASH CHIP AND BOWL POTATO ================= //
-                // ================================================ //
+                        if ( getNotificationsTextBlockActual.value == "" || getNotificationsTextBlockActual.value == `` ) {
 
-                    var peelWashAndChipPotato = getPotato.replaceAll("", "+")
-                    var bowlChips = []
+                            console.log("NO NOTIFICATION...")
 
-                        // RUN LOOP FOR CLEANING AND BOWLING ====== //
-                        // ======================================== //
+                        }
 
-                            for ( cleanPotatoCount =  0;  cleanPotatoCount < peelWashAndChipPotato.split("").length; cleanPotatoCount++) {
+                    // IF EXISTS THEN BRING UP POP UP ================ //
+                    // =============================================== //
 
-                                // IF BAD POTATO ================== //
-                                // ================================ //
+                        else {
 
-                                    if ( 
+                            console.log("PULLING UP NOTIFICATION...")
+
+                            // PULL UP NOTIFICATON MODE ============== //
+                            // ======================================= //
+
+                                // MAKE POP UP LIVE ================== //
+                                // =================================== //
+
+                                    getNotificationsMainContainer.style = `
+                                    
+                                        ${makeLiveNotificationElement}
+
+                                    `
+
+                                        // THEN FADE IN POP UP ======= //
+                                        // =========================== //
+
+                                            setTimeout(() => {
+
+                                                getNotificationsMainContainer.style = `
+                                    
+                                                    ${fadeInNotificationElement}
+
+                                                `
+
+                                            }, 50)
+
+
+                            // THEN LATER, HIDE NOTIFICATION MODE ==== //
+                            // ======================================= //
+
+                                setTimeout(() => {
+
+                                    
+                                    // FADE OUT POP UP =============== //
+                                    // =============================== //
+
+                                        getNotificationsMainContainer.style = `
+                                    
+                                            ${fadeOutNotificationElement}
+
+                                        `
+
+                                            // THEN KILL POP UP ====== //
+                                            // ======================= //
+
+                                                setTimeout(() => {
+
+                                                    getNotificationsMainContainer.style = `
                                         
-                                            letterCheck.test(`${peelWashAndChipPotato.split("")[cleanPotatoCount]}`) == false
-                                        
-                                        ) 
-                                        
-                                    {
+                                                        ${killNotificationElement}
 
-                                    }
+                                                    `
 
-                                // IF GOOD POTATO ================= //
-                                // ================================ //
-
-                                    else {
-
-                                        bowlChips.push(peelWashAndChipPotato.split("")[cleanPotatoCount])
-
-                                    }
+                                                }, 300)
 
 
-                            }
+                                }, 2000)
 
-                // MASH POTATO ==================================== //
-                // ================================================ //
-
-                    console.log("BOWL: " + bowlChips)
-
-
+                        }
 
             }
 
@@ -2777,471 +2959,6 @@
 
 
 
-    // FUNCTIONS FOR RECYCLING CONTROL ============================ //
-    // ============================================================ //
-
-        // RECYCLE RESPONSIBLY FUNCTION =========================== //
-        // ======================================================== //
-
-            function spawnedRecyclesFunction () {
-
-                // RUN LOOP TO GO THROUGH COLLECTED SPAWNED SOULS = //
-                // ================================================ //
-
-                    for ( soulsCount = 0; soulsCount < getRecyclingSpawnBinCount; soulsCount++ ) {
-
-                        // FIRST CREATE NEW CARD FOR SOUL ========= //
-                        // ======================================== //
-
-                            createNewRecycledSpawnedSoulCardFunction(soulsCount)
-
-                        // THEN REMOVE COLLECTED SOULS ============ //
-                        // ======================================== //
-
-                            eraseOldSpawnedSoulsFunction()
-
-                    }
-
-            }
-
-
-
-
-                // CREATE NEW SOUL CARD FUNCTION ================== //
-                // ================================================ //
-
-                    function createNewRecycledSpawnedSoulCardFunction (cardNumber) {
-
-                        // VARIABLES FOR INTAKE MODE ============== //
-                        // ======================================== //
-
-                            var getSoulStatusText = getRecyclingSpawnBin.children[0].children[0].children[0].children[0].children[0].children[0].textContent.replaceAll(" ", "")
-
-                            var getSoulNameText = getRecyclingSpawnBin.children[0].children[0].children[0].children[1].children[0].children[0].textContent.replaceAll(" ", "")
-
-                            var getSoulEmailText = getRecyclingSpawnBin.children[0].children[0].children[0].children[2].children[0].children[0].textContent.replaceAll(" ", "")
-
-                            var getSoulDoorText = getRecyclingSpawnBin.children[0].children[0].children[0].children[3].children[0].children[0].textContent.replaceAll(" ", "")
-
-                        // CREATION OF ELEMENTS =================== //
-                        // ======================================== //
-
-                            var createCardMainContainer = document.createElement(`div`)
-
-                                var createCardElementContainer = document.createElement(`div`)
-
-                                    var createCardContentResizerContainer = document.createElement(`div`)
-
-                                        // PENDING INDICATOR CONTAINER //
-                                        // =========================== //
-
-                                            var createCardStatusIndicatorContainer = document.createElement(`div`)
-
-                                                var createCardStatusIndicatorElementContainer = document.createElement(`div`)
-
-                                                    var createCardStatusIndicatorTextActual = document.createElement(`div`)
-
-                                        // USER NAME CONTAINER ======= //
-                                        // =========================== //
-
-                                            var createCardSoulNameContainer = document.createElement(`div`)
-
-                                                var createCardSoulNameElementContainer = document.createElement(`div`)
-
-                                                    var createCardSoulNameTextActual = document.createElement(`div`)
-
-                                        // USER EMAIL CONTAINER ====== //
-                                        // =========================== //
-
-                                            var createCardSoulEmailContainer = document.createElement(`div`)
-
-                                                var createCardSoulEmailElementContainer = document.createElement(`div`)
-
-                                                    var createCardSoulEmailTextActual = document.createElement(`div`)
-
-                                        // USER DOOR CONTAINER ======= //
-                                        // =========================== //
-
-                                            var createCardSoulDoorContainer = document.createElement(`div`)
-
-                                                var createCardSoulDoorElementContainer = document.createElement(`div`)
-
-                                                    var createCardSoulDoorTextActual = document.createElement(`div`)
-
-                                        // USER REVIEW BUTTON CONTAINER //
-                                        // ============================ //
-
-                                            var createCardSoulButtonContainer = document.createElement(`div`)
-
-                                                var createCardSoulButtonElementContainer = document.createElement(`div`)
-
-
-
-
-                        // NAMING OF ELEMENTS ===================== //
-                        // ======================================== //
-
-                            createCardMainContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}Container`
-
-                                createCardElementContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}Element`
-
-                                    createCardContentResizerContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}ContentResizer`
-
-                                        // PENDING INDICATOR CONTAINER //
-                                        // =========================== //
-
-                                            createCardStatusIndicatorContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}IndicatorContainer`
-
-                                                createCardStatusIndicatorElementContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}IndicatorElementContainer`
-
-                                                    createCardStatusIndicatorTextActual.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}IndicatorElementTextActual`
-
-                                        // USER NAME CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardSoulNameContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserNameContainer`
-
-                                                createCardSoulNameElementContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserNameElement`
-
-                                                    createCardSoulNameTextActual.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserNameTextActual`
-
-                                        // USER EMAIL CONTAINER ====== //
-                                        // =========================== //
-
-                                            createCardSoulEmailContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserEmailContainer`
-
-                                                createCardSoulEmailElementContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserEmailElement`
-
-                                                    createCardSoulEmailTextActual.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserEmailTextActual`
-
-                                        // USER DOOR CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardSoulDoorContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserDoorContainer`
-
-                                                createCardSoulDoorElementContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserDoorElement`
-
-                                                    createCardSoulDoorTextActual.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserDoorTextActual`
-
-                                        // USER DOOR CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardSoulButtonContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserButtonContainer`
-
-                                                createCardSoulButtonElementContainer.className = `recalledSpawnedContentCard${classNumbers[cardNumber]}UserButtonElement`
-
-
-
-
-                        // STYLING OF ELEMENTS ==================== //
-                        // ======================================== //
-
-                            createCardMainContainer.style = `
-                            
-                                width:100%;
-                                margin:20px 0px 0px 0px;
-                                position:relative;
-                                transition:all 400ms ease;
-                                -o-transition:all 400ms ease;
-                                -ms-transition:all 400ms ease;
-                                -moz-transition:all 400ms ease;
-                                -webkit-transition:all 400ms ease;
-
-                            `
-
-                                createCardElementContainer.style = `
-                                
-                                    width:100%;
-                                    top:0;
-                                    left:0;
-                                    right:0;
-                                    bottom:0;
-                                    margin:0px auto;
-                                    padding:15px 0px;
-                                    background:#FFFFFF;
-                                    box-shadow:0px 30px 30px -10px rgba(0,0,0,0.3);
-                                    border-radius:10px;
-                                    transition:all 400ms ease;
-                                    -o-transition:all 400ms ease;
-                                    -ms-transition:all 400ms ease;
-                                    -moz-transition:all 400ms ease;
-                                    -webkit-transition:all 400ms ease;
-
-                                `
-
-                                    createCardContentResizerContainer.style = `
-                                    
-                                        width:85%;
-                                        top:0;
-                                        left:0;
-                                        right:0;
-                                        bottom:0;
-                                        margin:0px auto;
-                                        display:block;
-                                        position:relative;
-                                        transition:all 400ms ease;
-                                        -o-transition:all 400ms ease;
-                                        -ms-transition:all 400ms ease;
-                                        -moz-transition:all 400ms ease;
-                                        -webkit-transition:all 400ms ease;
-
-                                    `
-
-                                        // PENDING INDICATOR CONTAINER //
-                                        // =========================== //
-
-                                            createCardStatusIndicatorContainer.style = `
-                                            
-                                                width:100%;
-                                                transition:all 400ms ease;
-                                                -o-transition:all 400ms ease;
-                                                -ms-transition:all 400ms ease;
-                                                -moz-transition:all 400ms ease;
-                                                -webkit-transition:all 400ms ease;
-
-                                            `
-
-                                                createCardStatusIndicatorElementContainer.style = `
-                                                
-                                                    width:max-content;
-                                                    padding:5px 10px;
-                                                    background:#C4E7D3;
-                                                    border-radius:5px;
-                                                    transition:all 400ms ease;
-                                                    -o-transition:all 400ms ease;
-                                                    -ms-transition:all 400ms ease;
-                                                    -moz-transition:all 400ms ease;
-                                                    -webkit-transition:all 400ms ease;
-
-                                                `
-
-                                                    createCardStatusIndicatorTextActual.style = `
-                                                    
-                                                        width:100%;
-                                                        transition:all 400ms ease;
-                                                        -o-transition:all 400ms ease;
-                                                        -ms-transition:all 400ms ease;
-                                                        -moz-transition:all 400ms ease;
-                                                        -webkit-transition:all 400ms ease;
-
-                                                    `
-
-                                        // USER NAME CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardSoulNameContainer.style = `
-                                            
-                                                ${resposibleRecycledMainFieldShowStyles}
-
-                                            `
-
-                                                createCardSoulNameElementContainer.style = `
-                                                
-                                                    ${resposibleRecycledFieldElementStyles}
-
-                                                `
-
-                                                    createCardSoulNameTextActual.style = `
-                                                    
-                                                        ${resposibleRecycledFieldtextActualStyles}
-
-                                                    `
-
-                                        // USER EMAIL CONTAINER ====== //
-                                        // =========================== //
-
-                                            createCardSoulEmailContainer.style = `
-                                            
-                                                ${resposibleRecycledMainFieldHideStyles}
-
-                                            `
-
-                                                createCardSoulEmailElementContainer.style = `
-                                                
-                                                    ${resposibleRecycledFieldElementStyles}
-
-                                                `
-
-                                                    createCardSoulEmailTextActual.style = `
-                                                    
-                                                        ${resposibleRecycledFieldtextActualStyles}
-
-                                                    `
-
-                                        // USER DOOR CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardSoulDoorContainer.style = `
-                                            
-                                                ${resposibleRecycledMainFieldHideStyles}
-
-                                            `
-
-                                                createCardSoulDoorElementContainer.style = `
-                                                
-                                                    ${resposibleRecycledFieldElementStyles}
-
-                                                `
-
-                                                    createCardSoulDoorTextActual.style = `
-                                                    
-                                                        ${resposibleRecycledFieldtextActualStyles}
-
-                                                    `
-
-                                        // USER BUTTON CONTAINER ===== //
-                                        // =========================== //
-
-                                            createCardSoulButtonContainer.style = `
-                                            
-                                                width:100%;
-                                                height:58px;
-                                                margin:10px 0px 0px 0px;
-                                                opacity:1;
-                                                display:block;
-                                                position:relative;
-                                                transition:all 400ms ease;
-                                                -o-transition:all 400ms ease;
-                                                -ms-transition:all 400ms ease;
-                                                -moz-transition:all 400ms ease;
-                                                -webkit-transition:all 400ms ease;
-
-                                            `
-
-                                                createCardSoulButtonElementContainer.style = `
-                                                
-                                                    width:100%;
-                                                    left:0;
-                                                    right:0;
-                                                    color:#FFFFFF;
-                                                    cursor:pointer;
-                                                    margin:0px auto;
-                                                    border:0px solid rgba(0, 0, 0, 0);
-                                                    z-index:0;
-                                                    outline:none;
-                                                    display:block;
-                                                    padding:20px 0px;
-                                                    position:absolute;
-                                                    font-size:15px;
-                                                    background:#34694F;
-                                                    box-shadow:0px 30px 30px -10px rgba(0, 0, 0, 0.3);
-                                                    border-radius:8px;
-                                                    transition:all 400ms ease;
-                                                    -o-transition:all 400ms ease;
-                                                    -ms-transition:all 400ms ease;
-                                                    -moz-transition:all 400ms ease;
-                                                    -webkit-transition:all 400ms ease;
-
-                                                `
-
-
-
-
-                        // TEXT MAPPING OF ELEMENTS =============== //
-                        // ======================================== //
-
-                                        // PENDING INDICATOR CONTAINER //
-                                        // =========================== //
-
-                                            createCardStatusIndicatorTextActual.textContent = `${getSoulStatusText}`
-
-                                        // USER NAME CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardSoulNameTextActual.textContent = `${getSoulNameText}`
-
-                                        // USER EMAIL CONTAINER ====== //
-                                        // =========================== //
-
-                                            createCardSoulEmailTextActual.textContent = `${getSoulEmailText}`
-
-                                        // USER DOOR CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardSoulDoorTextActual.textContent = `${getSoulDoorText}`
-
-                                        // USER DOOR CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardSoulButtonElementContainer.textContent = `review user`
-
-
-
-
-                        // APPENDING OF ELEMENTS ================== //
-                        // ======================================== //
-
-                            getSpawnedGhostBodyContainer.appendChild(createCardMainContainer)
-
-                                createCardMainContainer.appendChild(createCardElementContainer)
-
-                                    createCardElementContainer.appendChild(createCardContentResizerContainer)
-
-                                        // PENDING INDICATOR CONTAINER //
-                                        // =========================== //
-
-                                            createCardContentResizerContainer.appendChild(createCardStatusIndicatorContainer)
-
-                                                createCardStatusIndicatorContainer.appendChild(createCardStatusIndicatorElementContainer)
-
-                                                    createCardStatusIndicatorElementContainer.appendChild(createCardStatusIndicatorTextActual)
-
-                                        // USER NAME CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardContentResizerContainer.appendChild(createCardSoulNameContainer)
-
-                                                createCardSoulNameContainer.appendChild(createCardSoulNameElementContainer)
-
-                                                    createCardSoulNameElementContainer.appendChild(createCardSoulNameTextActual)
-
-                                        // USER EMAIL CONTAINER ====== //
-                                        // =========================== //
-
-                                            createCardContentResizerContainer.appendChild(createCardSoulEmailContainer)
-
-                                                createCardSoulEmailContainer.appendChild(createCardSoulEmailElementContainer)
-
-                                                    createCardSoulEmailElementContainer.appendChild(createCardSoulEmailTextActual)
-
-                                        // USER DOOR CONTAINER ======= //
-                                        // =========================== //
-
-                                            createCardContentResizerContainer.appendChild(createCardSoulDoorContainer)
-
-                                                createCardSoulDoorContainer.appendChild(createCardSoulDoorElementContainer)
-
-                                                    createCardSoulDoorElementContainer.appendChild(createCardSoulDoorTextActual)
-
-                                        // USER BUTTON CONTAINER ===== //
-                                        // =========================== //
-
-                                            createCardContentResizerContainer.appendChild(createCardSoulButtonContainer)
-
-                                                createCardSoulButtonContainer.appendChild(createCardSoulButtonElementContainer)
-
-                    }
-
-            
-
-
-                // ERASE OLD SPAWNED SOULS FUNCTION =============== //
-                // ================================================ //
-
-                    function eraseOldSpawnedSoulsFunction () {
-
-                        // REMOVE OLD SOULS ======================= //
-                        // ======================================== //
-
-                            getRecyclingSpawnBin.removeChild(getRecyclingSpawnBin.children[0])
-
-                    }
-
-
-
-
-
-
 
 
 
@@ -3307,159 +3024,6 @@
 
             })
 
-    // EVENTS FOR GHOST BODIES CONTROL ============================ //
-    // ============================================================ //
-
-        // EVENTS FOR SPWANED GHOSTS ============================== //
-        // ======================================================== //
-
-            // OPEN CLICKER ======================================= //
-            // ==================================================== //
-
-                getSpawnedGhostOpenClicker.addEventListener("click", function () {
-
-                    ghostClickerOnFunction(
-                        
-                        getSpawnedGhostOpenClicker, 
-                        getSpawnedGhostCloseClicker, 
-                        getSpawnedGhostIconLineOne, 
-                        getSpawnedGhostIconLineTwo, 
-                        getSpawnedGhostBodyContainer,
-
-                        getActiveGhostOpenClicker,
-                        getActiveGhostCloseClicker,
-                        getReleasedGhostOpenClicker,
-                        getReleasedGhostCloseClicker,
-                        getActiveGhostIconLineOne,
-                        getActiveGhostIconLineTwo,
-                        getReleasedGhostIconLineOne,
-                        getReleasedGhostIconLineTwo,
-                        getActiveGhostBodyContainer,
-                        getReleasedGhostBodyContainer
-                    
-                    )
-
-                })
-
-            // CLOSE CLICKER ====================================== //
-            // ==================================================== //
-
-                getSpawnedGhostCloseClicker.addEventListener("click", function () {
-
-                    ghostClickerOffFunction(
-                        
-                        getSpawnedGhostCloseClicker, 
-                        getSpawnedGhostOpenClicker, 
-                        getSpawnedGhostIconLineOne, 
-                        getSpawnedGhostIconLineTwo, 
-                        getSpawnedGhostBodyContainer
-                    
-                    )
-
-                })
-
-
-
-
-        // EVENTS FOR ACTIVE GHOSTS =============================== //
-        // ======================================================== //
-
-            // OPEN CLICKER ======================================= //
-            // ==================================================== //
-
-                getActiveGhostOpenClicker.addEventListener("click", function () {
-
-                    ghostClickerOnFunction(
-                        
-                        getActiveGhostOpenClicker, 
-                        getActiveGhostCloseClicker, 
-                        getActiveGhostIconLineOne, 
-                        getActiveGhostIconLineTwo, 
-                        getActiveGhostBodyContainer,
-
-                        getSpawnedGhostOpenClicker,
-                        getSpawnedGhostCloseClicker,
-                        getReleasedGhostOpenClicker,
-                        getReleasedGhostCloseClicker,
-                        getSpawnedGhostIconLineOne,
-                        getSpawnedGhostIconLineTwo,
-                        getReleasedGhostIconLineOne,
-                        getReleasedGhostIconLineTwo,
-                        getSpawnedGhostBodyContainer,
-                        getReleasedGhostBodyContainer
-                    
-                    )
-
-                })
-
-            // CLOSE CLICKER ====================================== //
-            // ==================================================== //
-
-                getActiveGhostCloseClicker.addEventListener("click", function () {
-
-                    ghostClickerOffFunction(
-                        
-                        getActiveGhostCloseClicker, 
-                        getActiveGhostOpenClicker, 
-                        getActiveGhostIconLineOne, 
-                        getActiveGhostIconLineTwo, 
-                        getActiveGhostBodyContainer
-                    
-                    )
-
-                })
-
-
-
-
-        // EVENTS FOR RELEASED GHOSTS ============================= //
-        // ======================================================== //
-
-            // OPEN CLICKER ======================================= //
-            // ==================================================== //
-
-                getReleasedGhostOpenClicker.addEventListener("click", function () {
-
-                    ghostClickerOnFunction(
-                        
-                        getReleasedGhostOpenClicker, 
-                        getReleasedGhostCloseClicker, 
-                        getReleasedGhostIconLineOne, 
-                        getReleasedGhostIconLineTwo, 
-                        getReleasedGhostBodyContainer,
-
-                        getSpawnedGhostOpenClicker,
-                        getSpawnedGhostCloseClicker,
-                        getActiveGhostOpenClicker,
-                        getActiveGhostCloseClicker,
-                        getSpawnedGhostIconLineOne,
-                        getSpawnedGhostIconLineTwo,
-                        getActiveGhostIconLineOne,
-                        getActiveGhostIconLineTwo,
-                        getSpawnedGhostBodyContainer,
-                        getActiveGhostBodyContainer
-                    
-                    )
-
-                })
-
-            // CLOSE CLICKER ====================================== //
-            // ==================================================== //
-
-                getReleasedGhostCloseClicker.addEventListener("click", function () {
-
-                    ghostClickerOffFunction(
-                        
-                        getReleasedGhostCloseClicker, 
-                        getReleasedGhostOpenClicker, 
-                        getReleasedGhostIconLineOne, 
-                        getReleasedGhostIconLineTwo, 
-                        getReleasedGhostBodyContainer
-                    
-                    )
-
-                })
-
 
 
 
@@ -3489,26 +3053,15 @@
 
         userNameInputField.focus()
 
-    // RUN RECYCLES =============================================== //
-    // ============================================================ //
-
-        spawnedRecyclesFunction()
-
-        setTimeout(() => {
-
-            mashedPotatoesFunction()
-            
-        }, 1000);
-
         
 
-    // CHECK CLICKED ON ELEMENT =================================== //
-    // ============================================================ //
+    // CHECK CLICKED ON ELEMENT ===================================================== //
+    // ============================================================================== //
 
         document.addEventListener("click", function (element) {
 
-            // CLASSNAME CAPTURED ================================= //
-            // ==================================================== //
+            // CLASSNAME CAPTURED =================================================== //
+            // ====================================================================== //
 
                 var getSelectedClassName = `${element.srcElement.className}`
 

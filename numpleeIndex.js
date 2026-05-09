@@ -80,6 +80,7 @@ const open = process.env.takeOpenly
 
         var inputPageNotificationsString = ``
         var userRegisterPageNotificationsString = ``
+        var spawnedGhostsPageNotificationsString = ``
         
         
         
@@ -261,7 +262,23 @@ const open = process.env.takeOpenly
         // FOR USER REGISTER PAGE -----------------------------------------------
         // //////////////////////////////////////////////////////////////////////
 
-            app.get("/register", async (req, res) => {
+            app.get("/register", (req, res) => {
+
+                // RENDER INDEX PAGE --------------------------------------------
+                // --------------------------------------------------------------
+
+                    res.render("userRegisterPage", {
+
+                        userRegisterPageNotificationsString
+
+                    });
+
+            });
+
+        // FOR NEWLY SPAWNED REVIEW PAGE -----------------------------------------
+        // //////////////////////////////////////////////////////////////////////
+
+            app.get("/spawned", async (req, res) => {
 
                 // OPEN CONNECTION ----------------------------------------------
                 // --------------------------------------------------------------
@@ -270,13 +287,6 @@ const open = process.env.takeOpenly
 
                 // RENDER INDEX PAGE WITH INFO ----------------------------------
                 // --------------------------------------------------------------
-
-                    // GET GHOSTS LISTS -----------------------------------------
-                    // ----------------------------------------------------------
-
-                        var spawned = {}
-                        var activated = {}
-                        var released = {}
 
                     // FOR SPAWNED GHOSTS ---------------------------------------
                     // ----------------------------------------------------------
@@ -289,33 +299,13 @@ const open = process.env.takeOpenly
 
                                 await spawnedUserProfile.find().then((spGhosts)  => { 
 
-                                    spawned = spGhosts
-
-                                });
-
-                            // ALL ACTIVATED GHOSTS -----------------------------
-                            // --------------------------------------------------
-
-                                await activatedUserProfile.find().then((acGhosts)  => { 
-
-                                    activated = acGhosts
-
-                                });
-
-                            // ALL RELEASED GHOSTS ------------------------------
-                            // --------------------------------------------------
-
-                                await releasedUserProfile.find().then((reGhosts)  => {
-
                                     // THEN RENDER PAGE WITH GHOST PLASMAS -----
                                     // -----------------------------------------
 
-                                        res.render("userRegisterPage", { 
+                                        res.render("spawnPage", { 
 
-                                            spawnedGhostList: spawned,
-                                            activatedGhostList: activated,
-                                            releasedGhostList: reGhosts,
-                                            userRegisterPageNotificationsString
+                                            spawnedGhostList: spGhosts,
+                                            spawnedGhostsPageNotificationsString
 
                                         });
 

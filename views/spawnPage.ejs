@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spawnControlPage</title>
+
+
+
+
+    <!-- BRING IN STYLES AND SCRIPTS FOR PAGE ==================== -->
+    <!-- ========================================================= -->
+
+        <!-- BRING IN STYLES ===================================== -->
+        <!-- ===================================================== -->
+
+            <link rel="stylesheet" type="text/css" href="/public/styles/numpleeSpawnsScreen.css" >
+
+        <!-- BRING IN SCRIPTS ==================================== -->
+        <!-- ===================================================== -->
+
+            <script src="/public/scripts/numpleeSpawnsScreen.js" defer></script>
+
+
+
+
+    <!-- BRING IN FONTS FOR PAGE ================================= -->
+    <!-- ========================================================= -->
+
+        <!-- OUTFIT FONT ========================================= -->
+        <!-- ===================================================== -->
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+
+<body class="spawnedGhostsBodyControl">
+
+    <!-- MAIN CONTENT CONTAINER ================================== -->
+    <!-- ========================================================= -->
+
+        <div class="spawnedGhostsMainContainerControl">
+
+
+            
+
+            <!-- RECALL ============================================================== -->
+            <!-- ===================================================================== -->
+
+                <div class="recallMainContainer">
+
+                    <!-- SPAWNED RECALLS ============================================= -->
+                    <!-- ============================================================= -->
+
+                        <div class="recallSpawnsMainCardsContainer">
+
+
+
+
+                            <%spawnedGhostList.forEach(spawnedGhost => {%>
+
+                            <!-- SPAWNED CARD CONTAINER ============================== -->
+                            <!-- ===================================================== -->
+
+                                <div class="recalledSpawnedContentCardContainer">
+
+                                    <div class="recalledSpawnedContentCardElement">
+
+                                        <div class="recalledSpawnedContentCardContentResizer">
+
+                                            <!-- PENDING INDICATOR CONTAINER ============= -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentIndicatorContainer">
+
+                                                    <div class="recalledSpawnedContentIndicatorElementContainer">
+
+                                                        <div class="recalledSpawnedContentIndicatorElementTextActual">
+
+                                                            <%=spawnedGhost.spawnedUserStatusIndicator%>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            <!-- USER NAME CONTAINER ===================== -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentUserNameContainer">
+
+                                                    <div class="recalledSpawnedContentUserNameElement">
+
+                                                        <div class="recalledSpawnedContentUserNameTextActual">
+
+                                                            <%=spawnedGhost.spawnedUserName%>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            <!-- USER EMAIL CONTAINER ==================== -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentUserEmailContainer">
+
+                                                    <div class="recalledSpawnedContentUserEmailElement">
+
+                                                        <div class="recalledSpawnedContentUserEmailTextActual">
+
+                                                            <%=spawnedGhost.spawnedUserEmail%>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            <!-- USER ENTRY CONTAINER ==================== -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentUserEntryContainer">
+
+                                                    <div class="recalledSpawnedContentUserEntryElement">
+
+                                                        <div class="recalledSpawnedContentUserEntryTextActual">
+
+                                                            <%=spawnedGhost.spawnedUserCode%>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            <!-- USER REVIEW BUTTON CONTAINER ============ -->
+                                            <!-- ========================================= -->
+
+                                                <div class="recalledSpawnedContentUserReviewButtonContainer">
+
+                                                    <div class="recalledSpawnedContentUserReviewButtonTextActual">
+
+                                                        review user
+
+                                                    </div>
+
+                                                </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            <%})%>
+
+
+                            
+
+                        </div>
+
+                </div>
+
+
+            
+
+            <!-- NOTIFICATIONS AND ERROS CONTAINER ======================= -->
+            <!-- ========================================================= -->
+
+                <!-- NOTIFICATIONS BLOCK CONTAINER ======================= -->
+                <!-- ===================================================== -->
+
+                    <div class="spawnedGhostsScreenNotificationBoxContainer">
+
+                        <div class="spawnedGhostsScreenNotificationBoxContentResizer">
+
+                            
+                            <!-- BODY TEXT CONTAINER ===================== -->
+                            <!-- ========================================= -->
+
+                                <div class="spawnedGhostsScreenNotificationBoxBodyContainer">
+
+                                    <div class="spawnedGhostsScreenNotificationBoxBodyElement">
+
+                                        <input
+                                        
+                                            name="notificationsText"
+                                            class="notificationsText"
+                                            type="text"
+                                            value="<%=spawnedGhostsPageNotificationsString%>"
+                                            readonly
+
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+                            
+
+
+            
+
+            <!-- SUBZERO ============================================================= -->
+            <!-- ===================================================================== -->
+
+                <div class="subzeroControlContainer" style="display:none;">
+
+                </div>
+
+
+            
+
+            <!-- GHOSTS ============================================================== -->
+            <!-- ===================================================================== -->
+
+                <div class="ghostsControlConatiner">
+
+
+
+
+                    <!-- SPAWNED GHOSTS CONTAINER ==================================== -->
+                    <!-- ============================================================= -->
+
+                        <div class="spawnedGhostsContainer">
+
+
+                            <!-- HEADLINE AND DROP DOWN SECTION ====================== -->
+                            <!-- ===================================================== -->
+                            
+                                <div class="spawnedGhostsHeadlineAndDropDownContainer">
+
+                                    <!-- HEADLINE SIDE =============================== -->
+                                    <!-- ============================================= -->
+
+                                        <div class="spawnedGhostsHeadlineSideContainer">
+
+                                            <div class="spawnedGhostsHeadlineTextActual">
+
+                                                SPAWNED
+
+                                            </div>
+                                            
+                                        </div>
+
+                                    <!-- DROP DOWN BUTTON SIDE ======================= -->
+                                    <!-- ============================================= -->
+
+                                        <div class="spawnedGhostsDropDownSideContainer">
+
+                                            <div class="spawnedGhostsDropDownButtonContainer">
+
+                                                <div class="spawnedGhostsDropDownButtonElement">
+
+                                                    <!-- DROP DOWN CLICKER CONTAINER = -->
+                                                    <!-- ============================= -->
+
+                                                        <div class="spawnedGhostsDropDownButtonClickerContainer">
+
+                                                            <div class="spawnedGhostsDropDownButtonClickerOn">
+
+                                                            </div>
+
+                                                            <div class="spawnedGhostsDropDownButtonClickerOff">
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    <!-- DROP DOWN ICON CONTAINER ==== -->
+                                                    <!-- ============================= -->
+
+                                                        <div class="spawnedGhostsDropDownButtonIconMover">
+
+                                                            <div class="spawnedGhostsDropDownButtonIconLineOne">
+
+                                                            </div>
+
+                                                            <div class="spawnedGhostsDropDownButtonIconLineTwo">
+
+                                                            </div>
+
+                                                        </div>
+
+                                                </div>
+
+                                            </div>
+                                            
+                                        </div>
+
+                                </div>
+
+
+                            <!-- SPAWNED GHOST CARDS SECTION ========================= -->
+                            <!-- ===================================================== -->
+                            
+                                <div class="spawnedGhostContentCardsContainer">
+
+                                </div>
+
+
+                        </div>
+
+
+
+
+                </div>
+
+        </div>
+    
+</body>
+
+
+</html>
